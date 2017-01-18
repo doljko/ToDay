@@ -8,4 +8,6 @@
     <string name="title_activity_splash_screen">Pomodrone</string>
     <string name="title_activity_login">LoginActivity</string>
     <string name="title_activity_signup">SignupActivity</string>
+    <string name="title_activity_settings">SettingsActivity</string>
+    <string name="title_activity_graphic">GraphicActivity</string>
 </resources>
