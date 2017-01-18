@@ -10,11 +10,14 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 
 import com.google.android.gms.appindexing.Action;
 import com.google.android.gms.appindexing.AppIndex;
 import com.google.android.gms.appindexing.Thing;
 import com.google.android.gms.common.api.GoogleApiClient;
+
+import org.w3c.dom.Text;
 
 public class SignupActivity extends AppCompatActivity {
 
@@ -35,7 +38,7 @@ public class SignupActivity extends AppCompatActivity {
         EditText passOneTxt = (EditText)findViewById(R.id.passOneTxt);
         EditText passReenter = (EditText)findViewById(R.id.passReenter);
         Button signUpButton = (Button)findViewById(R.id.signUpButton);
-        final Button loginButton = (Button)findViewById(R.id.signUpLoginButton);
+        TextView loginButton = (TextView)findViewById(R.id.signUpLoginButton);
 
         signUpButton.setOnClickListener(new View.OnClickListener() {
             @Override
