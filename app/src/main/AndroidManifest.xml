@@ -45,6 +45,10 @@
         <activity
             android:name=".GraphicActivity"
             android:label="@string/title_activity_graphic"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".HelpActivity"
+            android:label="@string/title_activity_help"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
