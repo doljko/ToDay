@@ -14,12 +14,6 @@
 
     </android.support.design.widget.AppBarLayout>
 
-    <TextView
-        android:text="Pomodoro"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/logoText" />
-
     <include layout="@layout/content_splash_screen" />
 
 </android.support.design.widget.CoordinatorLayout>
