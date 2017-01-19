@@ -1,5 +1,6 @@
 package mn.pomodoro;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -41,9 +42,23 @@ public class LoginActivity extends AppCompatActivity {
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent;
-                intent = new Intent(LoginActivity.this, MainActivity.class);
-                startActivity(intent);
+                final ProgressDialog progressDialog = new ProgressDialog(LoginActivity.this, R.style.AlertDialog_AppCompat_Dialog);
+                progressDialog.setIndeterminate(true);
+                progressDialog.setMessage("Уншиж байна...");
+                progressDialog.show();
+                new android.os.Handler().postDelayed(
+                        new Runnable() {
+                            @Override
+                            public void run() {
+
+                                Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                                startActivity(intent);
+                                progressDialog.dismiss();
+                            }
+                        }
+                , 2000);
             }
         });
 
