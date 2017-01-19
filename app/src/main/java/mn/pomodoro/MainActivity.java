@@ -2,6 +2,7 @@ package mn.pomodoro;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -15,11 +16,15 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.RelativeLayout;
+
+import java.util.Random;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener , ShakeSensor.ShakeListener{
-
+    View view;
     ShakeSensor shakeSensor;
+    public RelativeLayout main;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,6 +43,8 @@ public class MainActivity extends AppCompatActivity
         shakeSensor = new ShakeSensor();
         shakeSensor.setListener(this);
         shakeSensor.init(this);
+
+        main = (RelativeLayout)findViewById(R.id.content_main);
     }
 
     @Override
@@ -98,19 +105,24 @@ public class MainActivity extends AppCompatActivity
 
     @Override
     public void onShake() {
-
-        AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
-        builder.setTitle("Цээжлэх үгийн жагсаалт");
-        builder.setIcon(R.drawable.common_google_signin_btn_icon_dark);
-        builder.setMessage("XAXA");
-        builder.setPositiveButton("Хаах", new DialogInterface.OnClickListener() {
-            public void onClick(DialogInterface dialog, int id) {
-                onResume();
-                // Do something
-            }
-        });
-        builder.show();
-        onPause();
+        Random random = new Random();
+        int r = random.nextInt(256);
+        int g = random.nextInt(256);
+        int b = random.nextInt(256);
+        main = (RelativeLayout)findViewById(R.id.content_main);
+        main.setBackgroundColor(Color.rgb(r,g,b));
+//        AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+//        builder.setTitle("Цээжлэх үгийн жагсаалт");
+//        builder.setIcon(R.drawable.common_google_signin_btn_icon_dark);
+//        builder.setMessage("XAXA");
+//        builder.setPositiveButton("Хаах", new DialogInterface.OnClickListener() {
+//            public void onClick(DialogInterface dialog, int id) {
+//                onResume();
+//                // Do something
+//            }
+//        });
+//        builder.show();
+//        onPause();
     }
     @Override
     protected void onResume() {
