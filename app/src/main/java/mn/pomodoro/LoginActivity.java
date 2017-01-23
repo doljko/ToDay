@@ -2,6 +2,8 @@ package mn.pomodoro;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.content.SharedPreferences.Editor;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -13,47 +15,52 @@ import android.view.animation.Interpolator;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.gms.appindexing.Action;
 import com.google.android.gms.appindexing.AppIndex;
 import com.google.android.gms.appindexing.Thing;
 import com.google.android.gms.common.api.GoogleApiClient;
 
+import java.util.Objects;
+
 public class LoginActivity extends AppCompatActivity {
 
+    EditText usernameText;
+    EditText passwordText;
+    public static final String PREFER_NAME = "UserInfo";
+    private SharedPreferences sharedPreferences;
 
+    Editor editor;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        EditText usernameText = (EditText) findViewById(R.id.userNameText);
-        EditText passwordText = (EditText) findViewById(R.id.passText);
+        usernameText = (EditText) findViewById(R.id.userNameText);
+        passwordText = (EditText) findViewById(R.id.passText);
         Button loginButton = (Button) findViewById(R.id.loginButton);
         TextView signUpTextView = (TextView) findViewById(R.id.signupTextView);
+
 
         setSupportActionBar(toolbar);
 
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                final ProgressDialog progressDialog = new ProgressDialog(LoginActivity.this, R.style.AlertDialog_AppCompat_Dialog);
-                progressDialog.setIndeterminate(true);
-                progressDialog.setMessage("Уншиж байна...");
-                progressDialog.show();
-                new android.os.Handler().postDelayed(
-                        new Runnable() {
-                            @Override
-                            public void run() {
+                sharedPreferences = getSharedPreferences(PREFER_NAME, 0);
+                final String thisUsername = sharedPreferences.getString("username", "");
+                final String thisPassword = sharedPreferences.getString("password", "");
+                String name = usernameText.getText().toString();
+                String pass = passwordText.getText().toString();
 
-                                Intent intent = new Intent(LoginActivity.this, MainActivity.class);
-                                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                                startActivity(intent);
-                                progressDialog.dismiss();
-                            }
-                        }
-                , 2000);
+                if (Objects.equals(thisUsername, name)){
+                    Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                    startActivity(intent);
+                } else {
+                    Toast.makeText(getBaseContext(), "Алдаа гарлаа", Toast.LENGTH_LONG).show();
+                }
+
             }
         });
 

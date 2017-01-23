@@ -75,7 +75,7 @@ public class SignupActivity extends AppCompatActivity {
                 new Runnable() {
                     public void run() {
 //                        onSignupSuccess();
-                        sharedPreferences = getSharedPreferences("User", 0);
+                        sharedPreferences = getSharedPreferences(LoginActivity.PREFER_NAME, 0);
                         editor = sharedPreferences.edit();
                         editor.putString("username", name);
                         editor.putString("password", pass);
@@ -83,7 +83,7 @@ public class SignupActivity extends AppCompatActivity {
 
                         Toast.makeText(getBaseContext(), "Амжилттай бүртгэгдлээ", Toast.LENGTH_LONG).show();
                     }
-                }, 3000);
+                }, 1000);
     }
 
 //    public void onSignupSuccess() {
