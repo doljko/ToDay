@@ -11,6 +11,8 @@ import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -29,6 +31,9 @@ public class SignupActivity extends AppCompatActivity {
 
     public SharedPreferences sharedPreferences;
     Editor editor;
+    Animation shakeAnimation;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,7 +46,7 @@ public class SignupActivity extends AppCompatActivity {
         passReenter = (EditText)findViewById(R.id.passReenter);
         signUpButton = (Button)findViewById(R.id.signUpButton);
         loginButton = (TextView)findViewById(R.id.signUpLoginButton);
-
+        shakeAnimation = AnimationUtils.loadAnimation(getApplicationContext(),R.anim.shake);
         signUpButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -109,6 +114,7 @@ public class SignupActivity extends AppCompatActivity {
 
         if (name.isEmpty() || name.length() < 3){
             usernameText.setError("Нэр оруулна уу");
+            usernameText.setAnimation(shakeAnimation);
             valid = false;
         }
         else {
