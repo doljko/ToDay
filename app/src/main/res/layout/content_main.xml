@@ -12,4 +12,14 @@
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="mn.pomodoro.MainActivity"
     tools:showIn="@layout/app_bar_main">
+
+    <TextClock
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="211dp"
+        android:id="@+id/textClock"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:fontFamily="sans-serif-condensed"
+        android:textSize="36sp" />
 </RelativeLayout>
