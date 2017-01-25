@@ -13,6 +13,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.animation.Interpolator;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -28,10 +29,17 @@ public class LoginActivity extends AppCompatActivity {
 
     EditText usernameText;
     EditText passwordText;
+    CheckBox rememberCheckBox;
     public static final String PREFER_NAME = "UserInfo";
     private SharedPreferences sharedPreferences;
 
     Editor editor;
+    /**
+     * ATTENTION: This was auto-generated to implement the App Indexing API.
+     * See https://g.co/AppIndexing/AndroidStudio for more information.
+     */
+    private GoogleApiClient client;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,6 +47,7 @@ public class LoginActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         usernameText = (EditText) findViewById(R.id.userNameText);
         passwordText = (EditText) findViewById(R.id.passText);
+        rememberCheckBox = (CheckBox) findViewById(R.id.rememberCheckBox);
         Button loginButton = (Button) findViewById(R.id.loginButton);
         TextView signUpTextView = (TextView) findViewById(R.id.signupTextView);
 
@@ -54,14 +63,14 @@ public class LoginActivity extends AppCompatActivity {
                 String name = usernameText.getText().toString();
                 String pass = passwordText.getText().toString();
 
-                if (Objects.equals(thisUsername, name) || name.length() > 3){
+                if (Objects.equals(thisUsername, name) || name.length() > 3) {
                     Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                     startActivity(intent);
                 } else {
                     Toast.makeText(getBaseContext(), "Алдаа гарлаа", Toast.LENGTH_LONG).show();
                 }
 
-                if (Objects.equals(thisPassword, pass) || pass.length() > 5){
+                if (Objects.equals(thisPassword, pass) || pass.length() > 5) {
                     Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                     startActivity(intent);
                 } else {
@@ -78,6 +87,30 @@ public class LoginActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        rememberCheckBox.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+               Rememberme();
+            }
+        });
+        SharedPreferences prefs = getSharedPreferences(PREFER_NAME, 0);
+        String thisUsername = prefs.getString("username", "");
+        String thisPassword = prefs.getString("password", "");
+        boolean thisRemember = prefs.getBoolean("remember", false);
+        if(thisRemember) {
+            usernameText.setText(thisUsername);
+            passwordText.setText(thisPassword);
+            rememberCheckBox.setChecked(thisRemember);
+        }
+
+    }
+    private void Rememberme() {
+        boolean thisRemember = rememberCheckBox.isChecked();
+        sharedPreferences = getSharedPreferences(PREFER_NAME, 0);
+        editor = sharedPreferences.edit();
+        editor.putBoolean("remember", thisRemember);
+        editor.commit();
     }
 
 }
