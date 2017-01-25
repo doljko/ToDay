@@ -139,7 +139,7 @@ public class SignupActivity extends AppCompatActivity {
             passOneTxt.setAnimation(shakeAnimation);
             valid = false;
         } else {
-            usernameText.setError(null);
+            passOneTxt.setError(null);
         }
 
 
@@ -151,7 +151,7 @@ public class SignupActivity extends AppCompatActivity {
             passReenter.setError(null);
         }
 
-        if (Objects.equals(pass, passConfirm)) {
+        if (!Objects.equals(pass, passConfirm)) {
             passReenter.setError("Тэнцүү биш байна");
             passReenter.setAnimation(shakeAnimation);
             valid = false;
