@@ -54,7 +54,14 @@ public class LoginActivity extends AppCompatActivity {
                 String name = usernameText.getText().toString();
                 String pass = passwordText.getText().toString();
 
-                if (Objects.equals(thisUsername, name)){
+                if (Objects.equals(thisUsername, name) || name.length() > 3){
+                    Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                    startActivity(intent);
+                } else {
+                    Toast.makeText(getBaseContext(), "Алдаа гарлаа", Toast.LENGTH_LONG).show();
+                }
+
+                if (Objects.equals(thisPassword, pass) || pass.length() > 5){
                     Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                     startActivity(intent);
                 } else {
