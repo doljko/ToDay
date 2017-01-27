@@ -54,14 +54,14 @@ public class SignupActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(layout.activity_signup);
-        Toolbar toolbar = (Toolbar) findViewById(id.toolbar);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        usernameText = (EditText) findViewById(id.signUpName);
-        emailAddress = (EditText) findViewById(id.emailAddress);
-        passOneTxt = (EditText) findViewById(id.passOneTxt);
-        passReenter = (EditText) findViewById(id.passReenter);
-        signUpButton = (Button) findViewById(id.signUpButton);
-        loginButton = (TextView) findViewById(id.signUpLoginButton);
+        usernameText = (EditText) findViewById(R.id.signUpName);
+        emailAddress = (EditText) findViewById(R.id.emailAddress);
+        passOneTxt = (EditText) findViewById(R.id.passOneTxt);
+        passReenter = (EditText) findViewById(R.id.passReenter);
+        signUpButton = (Button) findViewById(R.id.signUpButton);
+        loginButton = (TextView) findViewById(R.id.signUpLoginButton);
         shakeAnimation = AnimationUtils.loadAnimation(getApplicationContext(), anim.shake);
         signUpButton.setOnClickListener(new View.OnClickListener() {
             @Override
