@@ -1,1 +1,7 @@
-# This app will help you everyday's successful activity's such as some plan, meeting and others.
+ToDay optimizes daily scheduling and planning
+
+### License
+
+### Authors
+[Doljinsuren](http://tortuvshin.github.io/)
+[Tortuvshin Byambaa](http://tortuvshin.github.io/)
