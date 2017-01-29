@@ -1,17 +1,16 @@
 <resources>
-    <string name="app_name">Про</string>
+    <string name="app_name">ToDay</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
     <string name="action_settings">Тохиргоо</string>
-    <string name="title_activity_splash_screen">Про</string>
+    <string name="title_activity_splash_screen">ToDay</string>
     <string name="title_activity_login">Нэвтрэх хэсэг</string>
     <string name="title_activity_signup">Бүртгүүлэх</string>
     <string name="title_activity_settings">Үндсэн тохиргоо</string>
     <string name="title_activity_graphic">Статистик</string>
     <string name="title_activity_help">HelpActivity</string>
     <string name="mail_error">И-мэйл оруулна уу</string>
-    <string name="title_activity_app_main">AppMain</string>
-    <string name="title_activity_main">MainActivity</string>
+    <string name="title_activity_main">ToDay</string>
 </resources>
