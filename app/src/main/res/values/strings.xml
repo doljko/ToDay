@@ -13,4 +13,5 @@
     <string name="title_activity_help">HelpActivity</string>
     <string name="mail_error">И-мэйл оруулна уу</string>
     <string name="title_activity_app_main">AppMain</string>
+    <string name="title_activity_main">MainActivity</string>
 </resources>
