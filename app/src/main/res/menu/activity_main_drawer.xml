@@ -4,27 +4,27 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/nav_camera"
-            android:icon="@android:drawable/ic_menu_agenda"
-               android:title="Төлөвлөгөө" />
+            android:icon="@drawable/todo"
+            android:title="Төлөвлөгөө" />
         <item
             android:id="@+id/nav_gallery"
-            android:icon="@drawable/ic_menu_gallery"
+            android:icon="@drawable/search"
             android:title="Хайх" />
         <item
             android:id="@+id/nav_grap"
-            android:icon="@drawable/ic_menu_gallery"
+            android:icon="@drawable/network"
             android:title="Статистик" />
             <item
                 android:id="@+id/nav_share"
-                android:icon="@drawable/ic_menu_manage"
+                android:icon="@drawable/settings"
                 android:title="Тохиргоо" />
             <item
                 android:id="@+id/nav_send"
-                android:icon="@drawable/ic_menu_send"
+                android:icon="@drawable/favorite"
                 android:title="Үнэлгээ өгөх" />
             <item
                 android:id="@+id/nav_manage"
-                android:icon="@drawable/ic_menu_manage"
+                android:icon="@drawable/idea"
                 android:title="Бидний тухай" />
     </group>
 </menu>
