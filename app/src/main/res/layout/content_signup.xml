@@ -15,7 +15,7 @@
         android:paddingRight="@dimen/activity_horizontal_margin"
         android:paddingTop="60dp"
         app:layout_behavior="@string/appbar_scrolling_view_behavior"
-        tools:context="mn.pomodoro.SignupActivity"
+        tools:context="mn.today.SignupActivity"
         tools:showIn="@layout/activity_signup"
         android:orientation="vertical">
         <android.support.design.widget.TextInputLayout

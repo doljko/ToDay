@@ -1,4 +1,4 @@
-package mn.pomodoro;
+package mn.today;
 
 import org.junit.Test;
 

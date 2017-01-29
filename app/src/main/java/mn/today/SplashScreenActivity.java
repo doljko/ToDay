@@ -1,12 +1,8 @@
-package mn.pomodoro;
+package mn.today;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
-import android.view.View;
 
 public class SplashScreenActivity extends AppCompatActivity {
 
@@ -22,7 +18,7 @@ public class SplashScreenActivity extends AppCompatActivity {
                     }catch(InterruptedException e){
                         e.printStackTrace();
                     }finally{
-                        Intent intent = new Intent(SplashScreenActivity.this,MainActivity.class);
+                        Intent intent = new Intent(SplashScreenActivity.this,AppMain.class);
                         startActivity(intent);
                         finish();
                     }

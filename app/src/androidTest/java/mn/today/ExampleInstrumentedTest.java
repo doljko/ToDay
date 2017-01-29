@@ -1,4 +1,4 @@
-package mn.pomodoro;
+package mn.today;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("mn.pomodoro", appContext.getPackageName());
+        assertEquals("mn.today", appContext.getPackageName());
     }
 }

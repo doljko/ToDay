@@ -1,4 +1,4 @@
-package mn.pomodoro.Model;
+package mn.today.Model;
 
 /**
  * Created by Doljko on 1/27/2017.

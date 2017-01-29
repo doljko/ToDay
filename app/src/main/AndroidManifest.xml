@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="mn.pomodoro">
+    package="mn.today">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -21,11 +21,11 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".MainActivity"
+            android:name="mn.today.MainActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".SplashScreenActivity"
+            android:name="mn.today.SplashScreenActivity"
             android:label="@string/title_activity_splash_screen"
             android:theme="@style/AppTheme.Fullscreen">
             <intent-filter>
@@ -35,11 +35,11 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".LoginActivity"
+            android:name="mn.today.LoginActivity"
             android:label="@string/title_activity_login"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".SignupActivity"
+            android:name="mn.today.SignupActivity"
             android:label="@string/title_activity_signup"
             android:theme="@style/AppTheme.NoActionBar" />
         <!--
@@ -51,19 +51,19 @@
             android:value="@integer/google_play_services_version" />
 
         <activity
-            android:name=".SettingsActivity"
+            android:name="mn.today.SettingsActivity"
             android:label="@string/title_activity_settings"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".GraphicActivity"
+            android:name="mn.today.GraphicActivity"
             android:label="@string/title_activity_graphic"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".HelpActivity"
+            android:name="mn.today.HelpActivity"
             android:label="@string/title_activity_help"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".AppMain"
+            android:name="mn.today.AppMain"
             android:label="@string/title_activity_app_main"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>

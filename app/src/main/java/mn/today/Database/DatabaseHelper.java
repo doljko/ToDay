@@ -1,4 +1,4 @@
-package mn.pomodoro.Database;
+package mn.today.Database;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
