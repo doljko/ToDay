@@ -28,7 +28,6 @@
         android:layout_height="wrap_content"
         android:id="@+id/textView2"
         android:fontFamily="casual"
-        android:autoText="false"
         android:textSize="56sp"
         android:layout_below="@+id/imageView2"
         android:layout_centerHorizontal="true" />

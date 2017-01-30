@@ -1,30 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="50dp"
+    android:height="50dp"
+    android:viewportWidth="50"
+    android:viewportHeight="50">
 
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/nav_camera"
-            android:icon="@drawable/todo"
+            android:icon="@drawable/today_list"
             android:title="Төлөвлөгөө" />
         <item
             android:id="@+id/nav_gallery"
-            android:icon="@drawable/search"
+            android:icon="@drawable/today_search"
             android:title="Хайх" />
         <item
             android:id="@+id/nav_grap"
-            android:icon="@drawable/network"
+            android:icon="@drawable/today_statistic"
             android:title="Статистик" />
         <item
             android:id="@+id/nav_share"
-            android:icon="@drawable/settings"
+            android:icon="@drawable/today_settings"
             android:title="Тохиргоо" />
         <item
             android:id="@+id/nav_send"
-            android:icon="@drawable/favorite"
+            android:icon="@drawable/today_like"
             android:title="Үнэлгээ өгөх" />
         <item
             android:id="@+id/nav_manage"
-            android:icon="@drawable/idea"
+            android:icon="@drawable/today_aboutus"
             android:title="Бидний тухай" />
     </group>
 </menu>
