@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:text="31"
+    style="@style/TextAppearance.AppCompat.Body1"
+    android:gravity="center"
+    android:background="?attr/selectableItemBackgroundBorderless"
+    android:layout_width="match_parent"
+    android:layout_height="?attr/listPreferredItemHeightSmall" />
