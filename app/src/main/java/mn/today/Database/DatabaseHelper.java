@@ -1,4 +1,4 @@
-package mn.today.Database;
+package mn.today.database;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
