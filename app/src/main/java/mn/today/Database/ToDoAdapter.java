@@ -1,4 +1,4 @@
-package mn.today.Database;
+package mn.today.database;
 
 import android.content.ContentValues;
 import android.content.Context;
@@ -8,7 +8,7 @@ import android.database.sqlite.SQLiteDatabase;
 import java.util.ArrayList;
 import java.util.List;
 
-import mn.today.Model.Todo;
+import mn.today.model.Todo;
 
 /**
  * Created by Doljko on 1/27/2017.

@@ -1,4 +1,4 @@
-package mn.today.Model;
+package mn.today.model;
 
 /**
  * Created by Doljko on 1/27/2017.

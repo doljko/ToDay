@@ -17,4 +17,14 @@
     <color name="base">#AAAAAA</color>
     <color name="iron">#CCCCCC</color>
     <color name="white">#FFFFFF</color>
+
+    <color name="blue50">#E3F2FD</color>
+    <color name="cyan50">#E0F7FA</color>
+    <color name="green50">#E8F5E9</color>
+    <color name="yellow50">#FFFDE7</color>
+    <color name="red50">#FFEBEE</color>
+    <color name="blue500">#2196F3</color>
+    <color name="blue700">#1976D2</color>
+    <color name="greenA700">#00C853</color>
+    <color name="colorDivider">#1F000000</color>
 </resources>
