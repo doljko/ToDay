@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/coordinator_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?attr/colorPrimary"
+    tools:context="mn.today.EditActivity">
+
+    <android.support.design.widget.AppBarLayout
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:elevation="0dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </android.support.design.widget.AppBarLayout>
+
+    <TextView
+        android:id="@+id/form_title"
+        tools:text="@string/create_event"
+        style="@style/TextAppearance.AppCompat.Headline"
+        android:textColor="?android:attr/textColorPrimaryInverseNoDisable"
+        android:gravity="center"
+        android:breakStrategy="balanced"
+        android:layout_marginTop="@dimen/margin_form"
+        android:layout_width="@dimen/calendar_width"
+        android:layout_height="@dimen/calendar_width"
+        tools:ignore="UnusedAttribute,InconsistentLayout" />
+
+    <android.support.v4.widget.NestedScrollView
+        android:background="?android:attr/colorBackground"
+        android:fillViewport="true"
+        android:layout_marginTop="@dimen/margin_form"
+        android:layout_marginLeft="@dimen/calendar_width"
+        android:layout_marginStart="@dimen/calendar_width"
+        android:layout_marginRight="@dimen/margin_form"
+        android:layout_marginEnd="@dimen/margin_form"
+        android:elevation="@dimen/default_elevation"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:ignore="UnusedAttribute">
+
+        <mn.today.widget.EventEditView
+            android:id="@+id/event_edit_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </android.support.v4.widget.NestedScrollView>
+
+</android.support.design.widget.CoordinatorLayout>
