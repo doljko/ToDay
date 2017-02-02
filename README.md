@@ -8,6 +8,5 @@ ToDay optimizes daily scheduling and planning
 [![GitHub license](https://img.shields.io/badge/license-AGPL-blue.svg)](https://raw.githubusercontent.com/today-app/android/master/LICENSE)
 
 ### Authors
-[Doljinsuren Enkhbayar](http://doljko.github.io/)
-
-[Tortuvshin Byambaa](http://tortuvshin.github.io/)
+* [@doljko](http://github.com/doljko)
+* [@tortuvshin](http://github.com/tortuvshin)
