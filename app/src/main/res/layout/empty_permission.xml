@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:background="?attr/colorPrimary"
+    android:gravity="center|center_vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:ignore="Overdraw">
+
+    <TextView
+        android:text="@string/calendar_permission_required"
+        style="@style/TextAppearance.AppCompat.Headline"
+        android:textColor="?android:attr/textColorPrimaryInverseNoDisable"
+        android:breakStrategy="balanced"
+        android:gravity="center"
+        android:drawableTop="@drawable/ic_event_white_96dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:ignore="UnusedAttribute" />
+
+    <Button
+        android:id="@+id/button_permission"
+        android:text="@string/grant_access"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_marginTop="@dimen/margin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>
