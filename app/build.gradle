@@ -1,80 +1,35 @@
 apply plugin: 'com.android.application'
-apply plugin: 'jacoco'
-apply plugin: 'com.github.kt3k.coveralls'
 
 android {
     compileSdkVersion 25
     buildToolsVersion "25.0.2"
-
     defaultConfig {
         applicationId "mn.today"
-        minSdkVersion 14
+        minSdkVersion 16
         targetSdkVersion 25
         versionCode 1
         versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         buildConfigField "String", "FORECAST_IO_API_KEY", "\"97b232a76771e4bd5fcd985da278ac0d\""
     }
-
-    lintOptions {
-        htmlReport false
-        xmlReport false
-        textReport true
-        warningsAsErrors true
-        abortOnError true
-        explainIssues false
-        absolutePaths false
-        ignore "InvalidPackage" // square/okio#58
-    }
-
-    testOptions.unitTests.all {
-        testLogging {
-            events 'passed', 'skipped', 'failed', 'standardOut', 'standardError'
-            exceptionFormat 'full'
-        }
-        maxHeapSize = '2048m'
-        maxParallelForks = 1
-        forkEvery = 1
-        jacoco {
-            includeNoLocationClasses = true
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
-}
-
-ext {
-    supportVersion = '25.1.0'
-    retrofit2Version = '2.0.0'
-    robolectricVersion = '3.0'
-    assertjVersion = '1.1.1'
 }
 
 dependencies {
-    compile "com.android.support:appcompat-v7:$supportVersion",
-            "com.android.support:recyclerview-v7:$supportVersion",
-            "com.android.support:design:$supportVersion",
-            "com.squareup.retrofit2:retrofit:$retrofit2Version",
-            "com.squareup.retrofit2:converter-gson:$retrofit2Version"
-    testCompile "org.robolectric:robolectric:$robolectricVersion",
-            "org.robolectric:shadows-support-v4:$robolectricVersion",
-            'junit:junit:4.12'
-    testCompile("com.squareup.assertj:assertj-android:$assertjVersion") {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
-    }
-}
+    })
+    compile 'com.android.support:appcompat-v7:25.1.0'
+    compile 'com.android.support:design:25.1.0'
 
-task jacocoTestReport(type: JacocoReport, dependsOn: ['testDebugUnitTest']) {
-    reports {
-        xml.enabled true
-        xml.destination "${buildDir}/reports/jacoco/test/jacocoTestReport.xml"
-        html.destination "${buildDir}/reports/coverage"
-    }
-
-    executionData = files "${buildDir}/jacoco/testDebugUnitTest.exec"
-    sourceDirectories = files android.sourceSets.main.java.srcDirs
-    classDirectories = fileTree(dir: "${buildDir}/intermediates/classes/debug",
-            exclude: [ '**/R.class', '**/R$*.class' ])
-
-    doLast {
-        println "coveralls report has been generated to file://${buildDir}/reports/jacoco/test/jacocoTestReport.xml"
-        println "coverage report generated at file://${reports.html.destination}/index.html"
-    }
+    compile "com.squareup.retrofit2:retrofit:2.0.0"
+    compile "com.squareup.retrofit2:converter-gson:2.0.0"
+    testCompile 'junit:junit:4.12'
+    compile 'com.android.support:recyclerview-v7:25.1.0'
 }
