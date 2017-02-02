@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingLeft="@dimen/horizontal_padding"
+    android:paddingRight="@dimen/horizontal_padding">
+
+    <TextView
+        android:id="@+id/text_view_title"
+        tools:text="Mon, March 7th, 2016"
+        style="@style/TextAppearance.AppCompat.Caption"
+        android:paddingTop="@dimen/padding"
+        android:paddingBottom="@dimen/padding"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <RelativeLayout
+        android:id="@+id/weather"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/text_view_morning"
+            tools:text="Sunny"
+            tools:drawableLeft="@drawable/ic_clear_day_24dp"
+            style="@style/Widget.AppTheme.TextView.Weather"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:text="@string/morning"
+            style="@style/Widget.AppTheme.TextView.Weather"
+            android:layout_toLeftOf="@id/text_view_morning"
+            android:layout_toStartOf="@id/text_view_morning"
+            android:layout_alignTop="@id/text_view_morning"
+            android:layout_alignBottom="@id/text_view_morning"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/text_view_afternoon"
+            tools:text="Cloudy"
+            tools:drawableLeft="@drawable/ic_cloudy_24dp"
+            style="@style/Widget.AppTheme.TextView.Weather"
+            android:layout_below="@id/text_view_morning"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:text="@string/afternoon"
+            style="@style/Widget.AppTheme.TextView.Weather"
+            android:layout_toLeftOf="@id/text_view_afternoon"
+            android:layout_toStartOf="@id/text_view_afternoon"
+            android:layout_alignTop="@id/text_view_afternoon"
+            android:layout_alignBottom="@id/text_view_afternoon"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/text_view_night"
+            tools:text="Clear"
+            tools:drawableLeft="@drawable/ic_clear_night_24dp"
+            style="@style/Widget.AppTheme.TextView.Weather"
+            android:layout_below="@id/text_view_afternoon"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:text="@string/night"
+            style="@style/Widget.AppTheme.TextView.Weather"
+            android:layout_toLeftOf="@id/text_view_night"
+            android:layout_toStartOf="@id/text_view_night"
+            android:layout_alignTop="@id/text_view_night"
+            android:layout_alignBottom="@id/text_view_night"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </RelativeLayout>
+
+</LinearLayout>

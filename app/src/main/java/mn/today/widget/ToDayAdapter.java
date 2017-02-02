@@ -25,7 +25,11 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.Collection;
 
+import mn.today.CalendarUtils;
+import mn.today.EditActivity;
+import mn.today.weather.Weather;
 import mn.today.R;
+import mn.today.content.EventCursor;
 
 /**
  * Created by Tortuvshin Byambaa on 1/31/2017.
