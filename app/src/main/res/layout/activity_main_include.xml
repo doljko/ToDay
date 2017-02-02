@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:divider="@drawable/horizontal_divider"
+    android:showDividers="middle"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:animateLayoutChanges="true"
+    tools:showIn="@layout/activity_main">
+
+    <mn.today.widget.EventCalendarView
+        android:id="@id/calendar_view"
+        android:visibility="gone"
+        tools:visibility="visible"
+        android:elevation="@dimen/default_elevation"
+        android:background="?android:attr/colorBackground"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:ignore="UnusedAttribute" />
+
+    <mn.today.widget.ToDayView
+        android:id="@id/agenda_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>
