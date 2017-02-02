@@ -41,11 +41,13 @@ import java.util.Calendar;
 import java.util.Collection;
 import java.util.HashSet;
 
+import mn.today.content.CalendarCursor;
 import mn.today.content.EventCursor;
 import mn.today.content.EventsQueryHandler;
 import mn.today.weather.WeatherSyncService;
 import mn.today.widget.CalendarSelectionView;
 import mn.today.widget.EventCalendarView;
+import mn.today.widget.ToDayAdapter;
 import mn.today.widget.ToDayView;
 
 public class MainActivity extends AppCompatActivity implements LoaderManager.LoaderCallbacks<Cursor> {
@@ -135,7 +137,7 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu_main, menu);
+        getMenuInflater().inflate(R.menu.main, menu);
         return super.onCreateOptionsMenu(menu);
     }
 
@@ -372,7 +374,7 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
         getSupportLoaderManager().initLoader(LOADER_LOCAL_CALENDAR, null, this);
         mFabAdd.show();
         mCalendarView.setCalendarAdapter(new CalendarCursorAdapter(this, mExcludedCalendarIds));
-        mTodayView.setAdapter(new AgendaCursorAdapter(this, mExcludedCalendarIds));
+        mTodayView.setAdapter(new ToDayCursorAdapter(this, mExcludedCalendarIds));
         loadWeather();
     }
 
@@ -544,12 +546,12 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
         }
     }
 
-    static class AgendaCursorAdapter extends AgendaAdapter {
+    static class ToDayCursorAdapter extends ToDayAdapter {
 
         @VisibleForTesting
         final DayEventsQueryHandler mHandler;
 
-        public AgendaCursorAdapter(Context context, Collection<String> excludedCalendarIds) {
+        public ToDayCursorAdapter(Context context, Collection<String> excludedCalendarIds) {
             super(context);
             mHandler = new DayEventsQueryHandler(context.getContentResolver(), this,
                     excludedCalendarIds);
@@ -580,10 +582,10 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
 
     static class DayEventsQueryHandler extends EventsQueryHandler {
 
-        private final AgendaCursorAdapter mAgendaCursorAdapter;
+        private final ToDayCursorAdapter mAgendaCursorAdapter;
 
         public DayEventsQueryHandler(ContentResolver cr,
-                                     AgendaCursorAdapter agendaCursorAdapter,
+                                     ToDayCursorAdapter agendaCursorAdapter,
                                      @NonNull Collection<String> excludedCalendarIds) {
             super(cr, excludedCalendarIds);
             mAgendaCursorAdapter = agendaCursorAdapter;
