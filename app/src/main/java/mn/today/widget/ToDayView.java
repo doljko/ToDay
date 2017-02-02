@@ -16,7 +16,9 @@ import android.util.AttributeSet;
 import android.view.View;
 
 import mn.today.CalendarUtils;
+import mn.today.R;
 import mn.today.ViewUtils;
+import mn.today.weather.Weather;
 
 /**
  * Created by Tortuvshin Byambaa on 1/31/2017.

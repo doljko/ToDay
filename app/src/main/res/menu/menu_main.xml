@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/action_today"
+        android:title="@string/today"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/action_weather"
+        android:title="@string/show_weather"
+        android:checkable="true"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_week_start"
+        android:title="@string/week_start">
+
+        <menu>
+
+            <group
+                android:id="@+id/group_week_start"
+                android:checkableBehavior="single">
+
+                <item
+                    android:id="@+id/action_week_start_saturday"
+                    android:title="@string/saturday" />
+
+                <item
+                    android:id="@+id/action_week_start_sunday"
+                    android:title="@string/sunday" />
+
+                <item
+                    android:id="@+id/action_week_start_monday"
+                    android:title="@string/monday" />
+
+            </group>
+
+        </menu>
+    </item>
+</menu>

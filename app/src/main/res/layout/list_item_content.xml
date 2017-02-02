@@ -36,7 +36,7 @@
             android:paddingRight="@dimen/horizontal_padding"
             android:paddingEnd="@dimen/horizontal_padding"
             android:gravity="center_vertical"
-            android:layout_width="0dp"s
+            android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1" />
 
