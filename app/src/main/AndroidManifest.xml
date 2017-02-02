@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="mn.today">
 
     <uses-permission android:name="android.permission.INTERNET" />
@@ -25,10 +26,12 @@
 
     <application
         android:allowBackup="true"
+        android:fullBackupContent="@xml/backup"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+        android:theme="@style/AppTheme"
+        tools:ignore="GoogleAppIndexingWarning">
         <activity
             android:name=".SplashScreenActivity"
             android:label="@string/title_activity_splash_screen"
@@ -71,7 +74,11 @@
             android:name=".MainActivity"
             android:label="@string/title_activity_main"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".EditActivity"></activity>
+        <activity android:name=".EditActivity"
+            android:windowSoftInputMode="adjustResize">
+        </activity>
+        <receiver android:name=".weather.WeatherSyncAlarmReceiver" />
+        <service android:name=".weather.WeatherSyncService" />
     </application>
 
 </manifest>
