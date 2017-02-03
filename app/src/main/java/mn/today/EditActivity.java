@@ -57,7 +57,7 @@ public class EditActivity extends AppCompatActivity implements LoaderManager.Loa
             return;
         }
         setContentView(R.layout.activity_edit);
-        setSupportActionBar((Toolbar) findViewById(R.id.toolbar));
+        setSupportActionBar((Toolbar) findViewById(R.id.toolbar_today));
         //noinspection ConstantConditions
         getSupportActionBar().setDisplayOptions(
                 ActionBar.DISPLAY_SHOW_HOME | ActionBar.DISPLAY_HOME_AS_UP);
