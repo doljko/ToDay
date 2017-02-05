@@ -23,7 +23,6 @@
     <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 
-
     <application
         android:allowBackup="true"
         android:fullBackupContent="@xml/backup"
@@ -50,7 +49,6 @@
             android:name=".SignupActivity"
             android:label="@string/title_activity_signup"
             android:theme="@style/AppTheme.NoActionBar" />
-
         <activity
             android:name=".SettingsActivity"
             android:label="@string/title_activity_settings"
@@ -67,11 +65,18 @@
             android:name=".MainActivity"
             android:label="@string/title_activity_main"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".EditActivity"
-            android:windowSoftInputMode="adjustResize">
-        </activity>
+        <activity
+            android:name=".EditActivity"
+            android:windowSoftInputMode="adjustResize" />
+
         <receiver android:name=".weather.WeatherSyncAlarmReceiver" />
+
         <service android:name=".weather.WeatherSyncService" />
+
+        <activity
+            android:name=".ViewActivity"
+            android:label="@string/title_activity_view"
+            android:theme="@style/AppTheme"></activity>
     </application>
 
 </manifest>

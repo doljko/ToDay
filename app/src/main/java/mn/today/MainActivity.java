@@ -178,28 +178,24 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
             Intent settings = new Intent(this, SettingsActivity.class);
             startActivity(settings);
             return true;
-
         }
 
         if (item.getItemId() == R.id.action_settings) {
             Intent settings = new Intent(this, SettingsActivity.class);
             startActivity(settings);
             return true;
-
         }
 
         if (item.getItemId() == R.id.action_graphic) {
             Intent contact = new Intent(this, HelpActivity.class);
             startActivity(contact);
             return true;
-
         }
 
         if (item.getItemId() == R.id.action_graphic) {
             Intent graph = new Intent(this, GraphicActivity.class);
             startActivity(graph);
             return true;
-
         }
 
         if (item.getItemId() == R.id.action_week_start_saturday ||
