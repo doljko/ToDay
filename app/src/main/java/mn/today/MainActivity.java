@@ -185,6 +185,12 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
             startActivity(settings);
             return true;
         }
+        if (item.getItemId() == R.id.action_view) {
+            Intent view = new Intent(this, ViewActivity.class);
+            startActivity(view);
+            return true;
+        }
+
 
         if (item.getItemId() == R.id.action_graphic) {
             Intent contact = new Intent(this, HelpActivity.class);

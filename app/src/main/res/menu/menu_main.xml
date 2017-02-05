@@ -39,6 +39,10 @@
         app:showAsAction="never" />
 
     <item
+        android:id="@+id/action_view"
+        android:title="@string/show_view"
+        app:showAsAction="never" />
+    <item
         android:id="@+id/action_week_start"
         android:title="@string/week_start">
 

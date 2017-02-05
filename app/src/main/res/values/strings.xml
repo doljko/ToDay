@@ -45,6 +45,7 @@
     <string name="show_graphic">Статистик</string>
     <string name="show_about">Бидний тухай</string>
     <string name="show_contact">Холбоо барих</string>
+    <string name="show_view">Дэлгэрэгүй</string>
     <string name="updating_weather" tools:ignore="TypographyEllipsis">Цаг агаарын мэдээлэл шинэчилж байна...</string>
     <string name="location_permission_required">Цаг агаар шинэчилхэд таны байршил хэрэгтэй</string>
     <string name="week_start">7 хоногийн эхлэл</string>
