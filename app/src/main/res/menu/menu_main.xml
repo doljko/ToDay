@@ -14,6 +14,31 @@
         app:showAsAction="never" />
 
     <item
+        android:id="@+id/action_search"
+        android:title="@string/show_search"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_settings"
+        android:title="@string/show_settings"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_graphic"
+        android:title="@string/show_graphic"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_about"
+        android:title="@string/show_about"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_contact"
+        android:title="@string/show_contact"
+        app:showAsAction="never" />
+
+    <item
         android:id="@+id/action_week_start"
         android:title="@string/week_start">
 

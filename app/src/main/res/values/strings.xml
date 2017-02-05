@@ -40,6 +40,11 @@
     <string name="night">Орой</string>
     <string name="fahrenheit">%1$.1f\u00b0F</string>
     <string name="show_weather">Цаг агаар харуулах</string>
+    <string name="show_search">Хайх</string>
+    <string name="show_settings">Тохиргоо</string>
+    <string name="show_graphic">Статистик</string>
+    <string name="show_about">Бидний тухай</string>
+    <string name="show_contact">Холбоо барих</string>
     <string name="updating_weather" tools:ignore="TypographyEllipsis">Цаг агаарын мэдээлэл шинэчилж байна...</string>
     <string name="location_permission_required">Цаг агаар шинэчилхэд таны байршил хэрэгтэй</string>
     <string name="week_start">7 хоногийн эхлэл</string>
@@ -50,4 +55,6 @@
     <string name="close_drawer">Close drawer</string>
     <string name="calendars">Календарууд</string>
     <string name="error_location">Таны байршилыг тогтоох боломжгүй байна</string>
+
+
 </resources>
