@@ -193,13 +193,13 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
 
 
         if (item.getItemId() == R.id.action_graphic) {
-            Intent contact = new Intent(this, HelpActivity.class);
+            Intent contact = new Intent(this, GraphicActivity.class);
             startActivity(contact);
             return true;
         }
 
         if (item.getItemId() == R.id.action_graphic) {
-            Intent graph = new Intent(this, GraphicActivity.class);
+            Intent graph = new Intent(this, SettingsActivity.class);
             startActivity(graph);
             return true;
         }
