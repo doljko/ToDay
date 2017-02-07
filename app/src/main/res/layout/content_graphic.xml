@@ -12,8 +12,10 @@
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="mn.today.GraphicActivity"
     tools:showIn="@layout/activity_graphic">
-    <com.github.mikephil.charting.charts.LineChart
-        android:id="@+id/chart"
+
+    <com.github.mikephil.charting.charts.PieChart
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        android:id="@+id/idPieChart"></com.github.mikephil.charting.charts.PieChart>
+
 </RelativeLayout>
