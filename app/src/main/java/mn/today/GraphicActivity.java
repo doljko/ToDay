@@ -35,7 +35,7 @@ public class GraphicActivity extends AppCompatActivity {
         pieChart.setRotationEnabled(true);
         pieChart.setHoleRadius(25f);
         pieChart.setTransparentCircleAlpha(0);
-        pieChart.setCenterText("Super Cool Chart");
+        pieChart.setCenterText("Төлөвлөгөө");
         pieChart.setCenterTextSize(10);
         pieChart.setDrawEntryLabels(true);
 
@@ -85,7 +85,7 @@ public class GraphicActivity extends AppCompatActivity {
         }
 
         //create the data set
-        PieDataSet pieDataSet = new PieDataSet(yEntrys, "Employee Sales");
+        PieDataSet pieDataSet = new PieDataSet(yEntrys, "Төлөвлөгөөний үзүүлэлтлл");
         pieDataSet.setSliceSpace(2);
         pieDataSet.setValueTextSize(12);
 
