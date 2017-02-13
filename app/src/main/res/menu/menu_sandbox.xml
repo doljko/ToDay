@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/action_reorder_elements"
+        android:title="@string/action_reorder_elements"
+        android:icon="@drawable/reorder_white_36dp"
+        app:showAsAction="ifRoom"
+        />
+
+
+    <item
+        android:id="@+id/action_flow_statistics"
+        android:icon="@drawable/times_completed_white_36dp"
+        android:title="@string/action_flow_statistics"
+        app:showAsAction="ifRoom"/>
+
+    <item
+        android:title="@string/menu_send_feedback"
+        app:showAsAction="collapseActionView"
+        android:id="@+id/action_send_feedback" />
+
+
+
+</menu>
