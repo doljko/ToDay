@@ -16,4 +16,12 @@
     <dimen name="dot_size">4dp</dimen>
     <dimen name="time_width">96dp</dimen>
     <dimen name="padding_text">4dp</dimen>
+    <dimen name="x1.5_times_activity_margin">24dp</dimen>
+    <dimen name="x2_activity_margin">32dp</dimen>
+    <dimen name="x4_activity_margin">64dp</dimen>
+    <dimen name="appbar_padding_top">8dp</dimen>
+    <dimen name="tasteful_text_spacing">25dp</dimen>
+    <dimen name="text_margin">16dp</dimen>
+    <dimen name="actionbar_size">?android:attr/actionBarSize</dimen>
+    <dimen name="x3_activity_margin">48dp</dimen>
 </resources>

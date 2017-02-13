@@ -18,6 +18,11 @@
     <color name="iron">#CCCCCC</color>
     <color name="white">#FFFFFF</color>
 
+    <color name="colorWhite">#eeeeee</color>
+    <color name="primary_dark_material_light">#06a47e</color>
+    <color name="foreground_material_light">#eaeaea</color>
+    <color name="accent_material_light">#06a47e</color>
+    <color name="primary_text_default_material_light">#deffffff</color>
     <color name="blue50">#E3F2FD</color>
     <color name="cyan50">#E0F7FA</color>
     <color name="green50">#E8F5E9</color>
