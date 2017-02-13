@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="vertical_padding">32dp</dimen>
+    <dimen name="padding">16dp</dimen>
+    <dimen name="margin">16dp</dimen>
+    <dimen name="time_width">120dp</dimen>
+    <dimen name="fab_margin">24dp</dimen>
+</resources>

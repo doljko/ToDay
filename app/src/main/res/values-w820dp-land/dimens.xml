@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="horizontal_padding">32dp</dimen>
+    <dimen name="vertical_padding">32dp</dimen>
+    <dimen name="calendar_width">392dp</dimen>
+    <dimen name="margin_form">92dp</dimen>
+</resources>
