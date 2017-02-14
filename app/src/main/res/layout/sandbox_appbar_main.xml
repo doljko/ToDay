@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.pressurelabs.flowopensource.SandBoxActivity">
+
+        <android.support.design.widget.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fitsSystemWindows="true"
+            android:theme="@style/AppTheme.AppBarOverlay">
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/sb_activity_toolbar"
+                android:layout_height="?attr/actionBarSize"
+                android:layout_width="match_parent"
+                android:background="?attr/colorPrimary"
+                android:popupTheme="@style/AppTheme.AppBarOverlay">
+
+            </android.support.v7.widget.Toolbar>
+
+        </android.support.design.widget.AppBarLayout>
+
+        <include layout="@layout/sandbox_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    <!-- Floating button for new flows! -->
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab_new_flow_element"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="@dimen/fab_margin"
+        android:src="@drawable/add_white_36dp"
+        android:onClick="createElement"/>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab_flow_state"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|left"
+        android:layout_margin="@dimen/fab_margin"
+        android:src="@drawable/fish_white_48"
+        android:onClick="goFlowState"/>
+
+
+    </android.support.design.widget.CoordinatorLayout>
