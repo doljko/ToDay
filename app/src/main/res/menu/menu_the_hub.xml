@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:compat="http://schemas.android.com/apk/res-auto">
+
+
+    <item
+        android:id="@+id/action_new_flow"
+        android:icon="@drawable/add_white_36dp"
+        android:title="@string/action_new_flow"
+        compat:showAsAction="always"/>
+
+    <item android:id="@+id/action_delete_flows"
+        android:icon="@drawable/delete_all_white_36dp"
+        android:title="@string/action_delete_flow"
+        compat:showAsAction="always"/>
+
+    <item
+        android:title="@string/menu_send_feedback"
+        compat:showAsAction="collapseActionView"
+        android:id="@+id/action_send_feedback" />
+
+ </menu>
