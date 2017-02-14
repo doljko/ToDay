@@ -1,0 +1,21 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <item
+        android:id="@+id/action_edit_element_info"
+        app:showAsAction="ifRoom"
+        android:title="Edit element"
+        android:icon="@drawable/edit_white_36dp"/>
+    <item
+        android:id="@+id/action_cancel_edits"
+        app:showAsAction="ifRoom"
+        android:title="Edit element"
+        android:icon="@drawable/cancel_white_36dp"/>
+    <item
+        android:title="@string/menu_send_feedback"
+        app:showAsAction="never"
+        android:screenOrientation="portrait"
+        android:id="@+id/action_send_feedback" />
+
+</menu>
