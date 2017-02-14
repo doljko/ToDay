@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:paddingRight="@dimen/x2_activity_margin"
+    android:paddingLeft="@dimen/x2_activity_margin"
+    android:paddingTop="@dimen/x1.5_times_activity_margin"
+    android:paddingBottom="@dimen/x1.5_times_activity_margin"
+    android:id="@+id/popup_stats"
+    android:background="@color/primary_text_default_material_light">
+    <!-- 12dp to account for 48dp from scaled ImageViews-->
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/container_total_elements">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/stats_total_elements"
+            android:id="@+id/stats_total_elements_title"
+            android:textAppearance="@style/TextAppearance.AppCompat.Subhead"/>
+
+        <TextView
+            android:text="10"
+            android:layout_toEndOf="@+id/stats_elements_img"
+            android:layout_alignBottom="@+id/stats_elements_img"
+            android:layout_marginLeft="@dimen/activity_horizontal_margin"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+            android:id="@+id/stats_total_elements"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <ImageView
+            android:id="@+id/stats_elements_img"
+            android:layout_marginTop="@dimen/x1.5_times_activity_margin"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/flag_black_48dp"
+            />
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/container_total_time"
+        android:layout_toEndOf="@+id/container_total_elements"
+        android:layout_alignTop="@+id/container_total_elements"
+        android:layout_marginLeft="@dimen/x3_activity_margin">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/stats_estimate_time"
+            android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+            android:text="@string/stats_estimated_time_title"/>
+
+        <TextView
+            android:text="10"
+            android:layout_toEndOf="@+id/stats_time_img"
+            android:layout_alignBottom="@+id/stats_time_img"
+            android:layout_marginLeft="@dimen/activity_horizontal_margin"
+            android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/stats_total_time"/>
+
+        <ImageView
+            android:id="@+id/stats_time_img"
+            android:layout_marginTop="@dimen/x1.5_times_activity_margin"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/time_blue_48dp"
+            />
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/container_times_complete"
+        android:layout_marginTop="@dimen/x1.5_times_activity_margin"
+        android:layout_below="@+id/container_total_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <TextView
+            android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/stats_times_completes_title"
+            android:text="@string/stats_times_complete_title"/>
+
+        <TextView
+            android:text="10"
+            android:layout_toEndOf="@+id/stats_completes_img"
+            android:layout_alignBottom="@+id/stats_completes_img"
+            android:layout_marginLeft="@dimen/activity_horizontal_margin"
+            android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/stats_times_complete"
+           />
+        <ImageView
+            android:id="@+id/stats_completes_img"
+            android:layout_marginTop="@dimen/x1.5_times_activity_margin"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/star_amber_48dp"
+            />
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/container_life_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@+id/container_times_complete"
+        android:layout_alignTop="@+id/container_times_complete"
+        android:layout_alignStart="@+id/container_total_time"
+        >
+        <TextView
+            android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/stats_life_time_spent"
+            android:text="@string/stats_life_time_in_flow"
+            />
+
+        <TextView
+            android:text="10"
+            android:layout_toEndOf="@+id/stats_lifetime_img"
+            android:layout_alignBottom="@+id/stats_lifetime_img"
+            android:layout_marginLeft="@dimen/activity_horizontal_margin"
+            android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/stats_life_time_spent_in_flow"/>
+        <ImageView
+            android:id="@+id/stats_lifetime_img"
+            android:layout_marginTop="@dimen/x1.5_times_activity_margin"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/android_green_48dp"
+            />
+    </RelativeLayout>
+
+
+
+</RelativeLayout>

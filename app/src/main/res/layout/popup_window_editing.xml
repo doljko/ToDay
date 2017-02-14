@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/popup_editing"
+    android:background="@color/primary_text_default_material_light"
+    android:paddingTop="9dp"
+    android:paddingBottom="9dp">
+    <!-- 12dp to account for 48dp from scaled ImageViews-->
+
+
+    <ImageView
+        android:layout_marginRight="15dp"
+        android:layout_marginLeft="30dp"
+        android:background="@color/primary_text_default_material_light"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/confirm_changes_teal_36dp"
+        android:id="@+id/popup_confirm_item_changes"
+        />
+
+    <ImageView
+
+        android:layout_marginRight="30dp"
+        android:layout_marginLeft="15dp"
+        android:background="@color/primary_text_default_material_light"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/cancel_edit_changes_red_36dp"
+        android:id="@+id/popup_cancel_item_changes"/>
+
+
+
+</LinearLayout>
