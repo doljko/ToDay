@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="50dp" android:layout_height="wrap_content"
+    android:id="@+id/statistics_layout">
+    <!-- TODO Popup menu with statistics on: times through, total time spent, number of elements
+    <ImageView
+        android:scaleType="fitCenter"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:src="@drawable/times_completed_white_48dp"
+        android:id="@+id/complete_tokens"
+        android:contentDescription="Completion Tokens"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0"
+        android:layout_toEndOf="@id/complete_tokens"
+        android:id="@+id/completion_tokens_count"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="@color/colorWhite"/>
+      -->
+</RelativeLayout>
