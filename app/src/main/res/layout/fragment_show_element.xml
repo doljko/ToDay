@@ -1,0 +1,164 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/x2_activity_margin">
+
+    <ImageView
+        android:contentDescription="Image of blank flag"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:id="@+id/fragment_se_task_img"
+        android:layout_gravity="center_horizontal|bottom"
+        android:src="@drawable/empty_task_large"/>
+
+    <ViewSwitcher
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/fragment_se_switcher_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_toEndOf="@id/fragment_se_task_img">
+
+        <TextView
+            android:textAppearance=
+                "@style/TextAppearance.AppCompat.Title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:maxWidth = "200dip"
+            android:text="placeholder_name"
+            android:id="@+id/switcher_se_name_TV" />
+
+        <EditText
+            android:textAppearance=
+                "@style/TextAppearance.AppCompat.Title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:id="@+id/switcher_se_name_ET" />
+
+    </ViewSwitcher>
+
+    <ViewSwitcher
+        android:layout_toEndOf="@id/fragment_se_task_img"
+        android:layout_below="@id/fragment_se_switcher_name"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/fragment_se_switcher_time"
+        android:layout_marginLeft="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" >
+
+        <TextView
+            android:text="TIME"
+            android:layout_marginTop="12dp"
+            android:textAppearance=
+                "@style/TextAppearance.AppCompat.Headline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:maxWidth = "100dip"
+            android:id="@+id/switcher_se_time_TV" />
+
+        <EditText
+            android:textAppearance=
+                "@style/TextAppearance.AppCompat.Headline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:inputType="number"
+            android:maxLength="2"
+            android:id="@+id/switcher_se_time_ET" />
+
+    </ViewSwitcher>
+
+    <ToggleButton
+        android:textOff="@string/minutes"
+        android:textOn="@string/hours"
+        android:textAllCaps="false"
+        android:id="@+id/fragment_se_units_toggle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Title"
+        android:background="@android:color/transparent"
+        android:layout_alignBottom="@+id/fragment_se_switcher_time"
+        android:layout_toEndOf="@+id/fragment_se_switcher_time"
+        android:layout_toRightOf="@+id/fragment_se_switcher_time" />
+
+    <TextView
+        android:id="@+id/fragment_se_notes_title"
+        android:text="@string/notes_title"
+        android:layout_marginTop="@dimen/x2_activity_margin"
+        android:layout_alignStart="@+id/fragment_se_task_img"
+        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+        android:layout_below="@+id/fragment_se_task_img"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textStyle="bold"/>
+
+    <ViewSwitcher
+        android:layout_marginTop="10dp"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="10dp"
+        android:layout_below="@id/fragment_se_notes_title"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/fragment_se_switcher_notes"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <TextView
+            android:textAppearance=
+                "?android:attr/textAppearanceMedium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:id="@+id/switcher_se_notes_TV" />
+
+        <EditText
+            android:layout_below="@+id/fragment_se_task_img"
+            android:id="@+id/switcher_se_notes_ET"
+            android:inputType="textMultiLine"
+            android:singleLine="true"
+            android:maxLines="3"
+            android:maxLength="75"
+            android:hint="@string/frgmt_show_element_notes_hint"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </ViewSwitcher>
+
+    <ImageView
+        android:id="@+id/fragment_se_og_glasses"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_mlg_glasses"
+        android:rotation="-15"
+        android:translationZ="3dp"
+        android:layout_alignStart="@id/fragment_se_task_img"
+        android:layout_marginLeft="35dp"
+        android:visibility="invisible"/>
+
+    <Button
+        android:paddingLeft="@dimen/x2_activity_margin"
+        android:paddingRight="@dimen/x2_activity_margin"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/fragment_se_switcher_notes"
+        android:id="@+id/fragment_se_finished_but"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/finished_allcaps"
+        android:onClick="onFinishedEdits"
+        android:textColor="@android:color/white"
+        android:visibility="invisible"
+        android:background="@drawable/rounded_accent_finish_button"/>
+
+
+</RelativeLayout>

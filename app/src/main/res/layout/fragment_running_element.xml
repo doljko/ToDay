@@ -1,0 +1,88 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/running_element_view"
+    >
+
+        <TextView
+            android:visibility="invisible"
+            android:onClick="onNextSelected"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/fragment_fe_next"
+            android:drawableLeft="@drawable/chevron_right_black_48dp"
+            android:gravity="center"
+            android:textAppearance=
+                "?android:attr/textAppearanceMedium"
+            android:layout_alignStart="@+id/designer_task_element"
+            android:text="@string/next_element"
+            android:layout_below="@+id/designer_task_element"
+            android:layout_marginTop="25dp"
+            />
+
+        <TextView
+            android:onClick="onMoreTimeSelected"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawablePadding="15dp"
+            android:visibility="gone"
+            android:id="@+id/fragment_fe_not_finished"
+            android:drawableLeft="@drawable/thumb_down_black_36dp"
+            android:gravity="center"
+            android:textAppearance=
+                "?android:attr/textAppearanceMedium"
+            android:text="@string/more_time"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/fragment_fe_next"
+            android:layout_marginTop="25dp"
+            android:layout_marginEnd="20dp"/>
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/fragment_fe_time_display"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="20dp"
+        android:textAppearance=
+            "?android:attr/textAppearanceLarge"
+        android:layout_above="@+id/progress_bar"
+        android:layout_centerHorizontal="true" />
+
+    <ProgressBar
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/progress_bar"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="5dp"
+        android:indeterminate="false"
+        android:layout_above="@+id/fragment_fe_task_name"
+        android:paddingBottom="5dp" />
+
+       <!-- android:progressDrawable="@drawable/progress_bar"
+        android:indeterminateDrawable="@drawable/progress_bar"-->
+
+
+    <ImageView
+        android:contentDescription="Image of blank flag"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/designer_task_element"
+        android:layout_gravity="center_horizontal|bottom"
+        android:src="@drawable/empty_task_large"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/fragment_fe_task_name"
+        android:textAppearance=
+            "?android:attr/textAppearanceLarge"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:layout_centerHorizontal="true"
+        android:layout_above="@+id/designer_task_element" />
+
+</RelativeLayout>
