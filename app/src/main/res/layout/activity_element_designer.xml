@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:columnCount="14">
+
+    <ImageView
+        android:contentDescription="Image of blank flag"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/designer_task_element"
+        android:src="@drawable/empty_task_large"
+        android:layout_alignParentTop="false"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentLeft="false"
+        android:layout_marginTop="60dp" />
+
+    <ImageView
+        android:contentDescription="Image of label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/designer_label_img"
+        android:src="@drawable/label_black_48dp"
+        android:layout_gravity="center_vertical"
+        android:layout_alignParentLeft="false"
+        android:layout_alignParentTop="false"
+        android:layout_alignParentEnd="false"
+        android:layout_alignParentStart="false"
+        android:layout_toStartOf="@id/designer_task_element"
+        android:layout_alignParentBottom="false"
+        android:layout_below="@+id/designer_task_element"
+        android:layout_marginTop="30dp"
+        android:layout_marginRight="10dp" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="text"
+        android:background="@android:color/transparent"
+        android:hint="@string/new_task_name"
+        android:ems="8"
+        android:id="@+id/designer_name_input"
+        android:maxLines="1"
+        android:maxLength="25"
+        android:focusableInTouchMode="true"
+        android:layout_alignParentLeft="false"
+        android:layout_alignParentTop="false"
+        android:layout_alignParentStart="false"
+        android:layout_alignParentEnd="false"
+        android:layout_toEndOf="@+id/designer_label_img"
+        android:layout_centerHorizontal="true"
+        android:layout_toLeftOf="@+id/designer_label_img"
+        android:layout_marginLeft="15dp"
+        android:layout_alignBottom="@+id/designer_label_img"
+        android:layout_marginBottom="12dp" />
+
+    <ImageView
+        android:contentDescription="Image of timer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/designer_timer_img"
+        android:src="@drawable/timer_black_48dp"
+        android:layout_alignParentStart="false"
+        android:layout_alignParentLeft="false"
+        android:layout_alignParentTop="false"
+        android:layout_below="@+id/designer_label_img"
+        android:layout_marginTop="25dp"
+        android:layout_alignStart="@id/designer_label_img" />
+    <!--TODO implement drawableLeft to this view and make things great again -->
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:ems="3"
+        android:id="@+id/designer_time_input"
+        android:layout_marginLeft="0dp"
+        android:hint="@string/hint_zero"
+        android:maxLength="2"
+        android:layout_alignTop="@+id/designer_timer_img"
+        android:layout_alignStart="@+id/designer_name_input" />
+
+    <Spinner
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/designer_select_time"
+        android:spinnerMode="dropdown"
+        android:layout_toEndOf="@id/designer_time_input"
+        android:layout_alignParentLeft="false"
+        android:layout_alignParentTop="false"
+        android:layout_marginTop="35dp"
+        android:layout_below="@+id/designer_label_img"
+        android:layout_toRightOf="@+id/designer_time_input" />
+
+    <ImageView
+        android:contentDescription="Image of check mark"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/designer_done_element"
+        android:src="@drawable/done_black_48dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:onClick="doneElement" />
+
+    <ImageView
+        android:contentDescription="Image of X"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/designer_done_element"
+        android:layout_alignParentStart="true"
+        android:src="@drawable/cancel_black_48dp"
+        android:layout_alignBottom="@+id/designer_done_element"
+        android:id="@+id/designer_forget_element"
+        android:onClick="forgetElement" />
+
+</RelativeLayout>
