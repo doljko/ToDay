@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="75dp"
+    android:dividerHeight="0dp"
+    android:fitsSystemWindows="true">
+    <android.support.v7.widget.CardView
+        android:id="@+id/card_view"
+        android:layout_gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="5dp"
+        card_view:cardCornerRadius="8dp"
+        card_view:cardElevation="8dp"
+        android:foreground="?android:attr/selectableItemBackground">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ViewSwitcher
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/hub_rename_switcher"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
+
+                <TextView
+                    android:textAppearance=
+                        "?android:attr/textAppearanceMedium"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="12dp"
+                    android:maxWidth = "200dip"
+                    android:inputType="textMultiLine"
+                    android:maxLines="2"
+                    android:id="@+id/item_flow_name" />
+
+                <EditText
+                    android:visibility="gone"
+                    android:textAppearance=
+                        "?android:attr/textAppearanceMedium"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="12dp"
+                    android:id="@+id/hub_item_flow_rename" />
+            </ViewSwitcher>
+
+
+            <!-- Flow Symbol Icon item_flow_name-->
+
+
+
+
+            <ImageView
+                android:contentDescription="@string/task_flag_description"
+                android:id="@+id/item_element_icon"
+                android:src="@drawable/flag_small_black_outline"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginEnd="125dp"
+                android:layout_centerVertical="true"
+                android:layout_alignParentEnd="true" />
+            <!-- Insert Flow Element Icon -->
+
+            <TextView
+                android:id="@+id/item_element_count"
+                android:textAppearance=
+                    "?android:attr/textAppearanceSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_alignLeft="@+id/item_element_icon"
+                android:layout_marginLeft="25dp" />
+
+            <ImageView
+                android:contentDescription="@string/timer_description"
+                android:id="@+id/item_time_icon"
+                android:src="@drawable/timer_black_48dp"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_centerVertical="true"
+                android:layout_alignStart="@+id/item_element_icon"
+                android:layout_toRightOf="@+id/item_element_icon"
+                android:layout_marginLeft="55dp" />
+            <!-- Insert Flow Element Icon -->
+
+            <TextView
+                android:id="@+id/item_total_time"
+                android:textAppearance=
+                    "?android:attr/textAppearanceSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_alignLeft="@+id/item_time_icon"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="2dp" />
+
+            <TextView
+                android:id="@+id/item_time_units"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/item_time_icon"
+                android:layout_marginLeft="50dp"
+                android:layout_alignLeft="@+id/item_time_icon"
+                android:layout_marginTop="2dp" />
+        </RelativeLayout>
+
+    </android.support.v7.widget.CardView>
+
+</LinearLayout>
