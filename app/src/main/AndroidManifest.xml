@@ -77,6 +77,49 @@
             android:name=".ViewActivity"
             android:label="@string/title_activity_view"
             android:theme="@style/AppTheme"></activity>
+
+        <activity
+            android:name="mn.today.TheHubActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="mn.today.LicenseActivity"
+            android:label="@string/license_text"
+            android:parentActivityName="mn.today.TheHubActivity"
+            android:screenOrientation="portrait">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="mn.today.TheHubActivity" />
+        </activity>
+        <activity
+            android:name="mn.today.SandBoxActivity"
+            android:parentActivityName="mn.today.TheHubActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name="mn.today.ElementDesignerActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="mn.today.ToDayStateActivity"
+            android:parentActivityName="mn.today.SandBoxActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="mn.today.FinishedFlowActivity"
+            android:noHistory="true"
+            android:parentActivityName="mn.today.TheHubActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name="mn.today.ShowElementActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme"></activity>
     </application>
 
 </manifest>
