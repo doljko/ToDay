@@ -15,7 +15,7 @@ import android.widget.Toast;
 
 
 import java.util.Objects;
-
+@Deprecated
 public class LoginActivity extends AppCompatActivity {
 
     EditText usernameText;

@@ -20,6 +20,7 @@ import java.util.Objects;
 
 import static mn.today.R.*;
 
+@Deprecated
 public class SignupActivity extends AppCompatActivity {
     EditText usernameText;
     EditText emailAddress;
