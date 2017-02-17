@@ -5,9 +5,12 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.IntentSender;
 import android.graphics.drawable.ColorDrawable;
+import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.support.annotation.RequiresApi;
 import android.support.design.widget.NavigationView;
 import android.support.design.widget.Snackbar;
 import android.support.v4.view.GravityCompat;
@@ -32,6 +35,20 @@ import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.ViewSwitcher;
 
+import com.google.android.gms.appindexing.Action;
+import com.google.android.gms.appindexing.AppIndex;
+import com.google.android.gms.appindexing.Thing;
+import com.google.android.gms.common.ConnectionResult;
+import com.google.android.gms.common.GooglePlayServicesUtil;
+import com.google.android.gms.common.api.GoogleApiClient;
+import com.google.android.gms.common.api.ResultCallback;
+import com.google.android.gms.drive.Drive;
+import com.google.android.gms.drive.DriveApi;
+import com.google.android.gms.drive.DriveId;
+import com.google.android.gms.drive.MetadataChangeSet;
+import com.google.android.gms.drive.OpenFileActivityBuilder;
+import com.kobakei.ratethisapp.RateThisApp;
+
 import java.util.ArrayList;
 import java.util.Calendar;
 
@@ -50,7 +67,7 @@ public class TheHubActivity extends AppCompatActivity implements HubRecyclerView
     /* Recycler View */
     private RecyclerView recyclerView;
     private HubRecyclerViewAdapter adapter;
-    private ArrayList<Flow> rvContent;
+    private ArrayList<ToDay> rvContent;
 
     /* Card Interactions */
     private String menuState;
@@ -85,8 +102,7 @@ public class TheHubActivity extends AppCompatActivity implements HubRecyclerView
         recyclerView.setLayoutManager(mLayoutManager);
         recyclerView.setItemAnimator(new DefaultItemAnimator());
 
-        if (savedInstanceState!=null && !savedInstanceState.isEmpty())
-        {
+        if (savedInstanceState != null && !savedInstanceState.isEmpty()) {
             rvContent = savedInstanceState.getParcelableArrayList(AppConstants.RESTORED_USER_FLOWS);
             manager = savedInstanceState.getParcelable(AppConstants.RESTORED_DATA_MANAGER);
         } else {
@@ -96,12 +112,14 @@ public class TheHubActivity extends AppCompatActivity implements HubRecyclerView
 
         menuState = AppConstants.MENU_ITEMS_NATIVE;
 
+        // ATTENTION: This "addApi(AppIndex.API)"was auto-generated to implement the App Indexing API.
+        // See https://g.co/AppIndexing/AndroidStudio for more information.
         mGoogleApiClient = new GoogleApiClient.Builder(this)
                 .addApi(Drive.API)
                 .addScope(Drive.SCOPE_FILE)
                 .addConnectionCallbacks(this)
                 .addOnConnectionFailedListener(this)
-                .build();
+                .addApi(AppIndex.API).build();
     }
 
     private void generateDrawerGreeting(NavigationView view) {
@@ -310,7 +328,7 @@ public class TheHubActivity extends AppCompatActivity implements HubRecyclerView
                             createNewFlow(); //Recall the dialog
                         } else {
 
-                            Flow newF = new Flow(nameInputET.getText().toString(), 0);
+                            ToDay newF = new ToDay(nameInputET.getText().toString(), 0);
 
                             if (adapter != null) {
                                 rvContent.add(newF);
@@ -339,6 +357,7 @@ public class TheHubActivity extends AppCompatActivity implements HubRecyclerView
 
 
 
+    @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN_MR1)
     private AlertDialog.Builder generateCustomDialog(EditText nameInputET) {
         AlertDialog.Builder newFlowDialog = new AlertDialog.Builder(TheHubActivity.this);
 
@@ -404,7 +423,7 @@ public class TheHubActivity extends AppCompatActivity implements HubRecyclerView
      * @param clickedFlow flow that was clicked
      */
     @Override
-    public void onCardClick(Flow clickedFlow) {
+    public void onCardClick(ToDay clickedFlow) {
         Intent i = new Intent(TheHubActivity.this, SandBoxActivity.class);
 
         i.putExtra(AppConstants.EXTRA_PASSING_UUID, clickedFlow.getUuid());
@@ -419,8 +438,9 @@ public class TheHubActivity extends AppCompatActivity implements HubRecyclerView
      * @param cardViewClicked the cardview view object clicked
      * @return boolean representing consumption
      */
+    @RequiresApi(api = Build.VERSION_CODES.KITKAT)
     @Override
-    public boolean onCardLongClick(Flow longClickedFlow, int cardPosition, View cardViewClicked) {
+    public boolean onCardLongClick(ToDay longClickedFlow, int cardPosition, View cardViewClicked) {
         return  showLongClickPopUpMenu(longClickedFlow,cardPosition, cardViewClicked);
     }
 
@@ -437,7 +457,8 @@ public class TheHubActivity extends AppCompatActivity implements HubRecyclerView
      * @param cardViewClicked the cardview view object clicked
      * @return
      */
-    private boolean showLongClickPopUpMenu(final Flow longClickedFlow, final int cardPosition, final View cardViewClicked) {
+    @RequiresApi(api = Build.VERSION_CODES.KITKAT)
+    private boolean showLongClickPopUpMenu(final ToDay longClickedFlow, final int cardPosition, final View cardViewClicked) {
         LayoutInflater layoutInflater = (LayoutInflater) this
                 .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         View layout = layoutInflater.inflate(R.layout.popup_window_longclick, null);
@@ -521,6 +542,7 @@ public class TheHubActivity extends AppCompatActivity implements HubRecyclerView
         AppUtils.setNameInputFilters(rename);
 
         rename.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @RequiresApi(api = Build.VERSION_CODES.KITKAT)
             @Override
             public void onFocusChange(View v, boolean hasFocus) {
                 if (rename.hasFocus()) {
@@ -549,6 +571,7 @@ public class TheHubActivity extends AppCompatActivity implements HubRecyclerView
      * @param cardViewClicked the cardview view object clicked
      * @param switcher the viewSwitcher object used to rename
      */
+    @RequiresApi(api = Build.VERSION_CODES.KITKAT)
     private void showEditPopupWindow(final EditText newName, View cardViewClicked, final ViewSwitcher switcher, final int cardPosition) {
         LayoutInflater layoutInflater = (LayoutInflater) this
                 .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
@@ -576,7 +599,7 @@ public class TheHubActivity extends AppCompatActivity implements HubRecyclerView
 
             @Override
             public void onClick(View v) {
-                Flow toChange = rvContent.get(cardPosition);
+                ToDay toChange = rvContent.get(cardPosition);
                 if (newName.getText().toString().equals("")) {
                     // Need to optimize this so that the dialog does NOT disappear and just display toast
                     Toast.makeText(TheHubActivity.this, "This Flow needs a name!", Toast.LENGTH_LONG).show();
@@ -656,6 +679,9 @@ public class TheHubActivity extends AppCompatActivity implements HubRecyclerView
 
         // If the criteria is satisfied, "Rate this app" dialog will be shown
         RateThisApp.showRateDialogIfNeeded(this);
+        // ATTENTION: This was auto-generated to implement the App Indexing API.
+        // See https://g.co/AppIndexing/AndroidStudio for more information.
+        AppIndex.AppIndexApi.start(mGoogleApiClient, getIndexApiAction());
     }
 
     @Override
@@ -785,4 +811,29 @@ public class TheHubActivity extends AppCompatActivity implements HubRecyclerView
         return mGoogleApiClient;
     }
 
+    /**
+     * ATTENTION: This was auto-generated to implement the App Indexing API.
+     * See https://g.co/AppIndexing/AndroidStudio for more information.
+     */
+    public Action getIndexApiAction() {
+        Thing object = new Thing.Builder()
+                .setName("TheHub Page") // TODO: Define a title for the content shown.
+                // TODO: Make sure this auto-generated URL is correct.
+                .setUrl(Uri.parse("http://[ENTER-YOUR-URL-HERE]"))
+                .build();
+        return new Action.Builder(Action.TYPE_VIEW)
+                .setObject(object)
+                .setActionStatus(Action.STATUS_TYPE_COMPLETED)
+                .build();
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+
+        // ATTENTION: This was auto-generated to implement the App Indexing API.
+        // See https://g.co/AppIndexing/AndroidStudio for more information.
+        AppIndex.AppIndexApi.end(mGoogleApiClient, getIndexApiAction());
+        mGoogleApiClient.disconnect();
+    }
 }

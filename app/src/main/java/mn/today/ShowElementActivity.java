@@ -15,7 +15,7 @@ import android.widget.Toast;
 public class ShowElementActivity extends AppCompatActivity implements ShowElementFragment.onEditPasser{
 
     private String menuState;
-    private Flow flow;
+    private ToDay flow;
     private ShowElementFragment fragment;
 
     @Override
@@ -130,7 +130,7 @@ public class ShowElementActivity extends AppCompatActivity implements ShowElemen
             toggleMenuItemsTo(AppConstants.MENU_ITEMS_NATIVE);
         } else if (status.equals(AppConstants.STATUS_CONFIRM_EDITS)){
 
-            FlowElement elementToModify = flow.find(fragment.getCurrentElement());
+            ToDayElement elementToModify = flow.find(fragment.getCurrentElement());
 
             modifyElementData(b, elementToModify);
             new AppDataManager(this).overwrite(flow.getUuid(),flow);
@@ -139,7 +139,7 @@ public class ShowElementActivity extends AppCompatActivity implements ShowElemen
         }
     }
 
-    private void modifyElementData(Bundle b, FlowElement elementToModify) {
+    private void modifyElementData(Bundle b, ToDayElement elementToModify) {
 
         elementToModify.setElementName(b.getString(AppConstants.KEY_NEW_NAME));
         elementToModify.setTimeEstimate(b.getInt(AppConstants.KEY_NEW_TIME));
@@ -152,7 +152,7 @@ public class ShowElementActivity extends AppCompatActivity implements ShowElemen
         fragment.finishEdits(AppConstants.STATUS_COMMIT_EDITS);
     }
 
-    private void updateFragment(FlowElement elementToUpdateWith) {
+    private void updateFragment(ToDayElement elementToUpdateWith) {
 
         fragment = ShowElementFragment.newInstance(
                 elementToUpdateWith

@@ -9,6 +9,8 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.GridView;
 
+import org.askerov.dynamicgrid.DynamicGridView;
+
 /**
  * Created by Tortuvshin Byambaa on 2/15/2017.
  */

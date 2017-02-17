@@ -24,6 +24,9 @@ import android.widget.Toast;
 
 import java.util.LinkedList;
 
+import xyz.hanks.library.SmallBang;
+import xyz.hanks.library.SmallBangListener;
+
 /**
  * Created by Tortuvshin Byambaa on 2/15/2017.
  */
@@ -36,13 +39,13 @@ public class SandBoxActivity extends AppCompatActivity
     //
     ///// and the user can specify if they've finished the task move to next activity || need more time (+why) || ask help (slack)
 
-    private Flow currentFlow;
+    private ToDay currentToDay;
     // Flow currently being worked on
     private AppDataManager util;
     private MultiFunctionGridView elementGridView;
     private SandBoxGridAdapter gridAdapter;
     private Toast currentToast = null;
-    private LinkedList<FlowElement> gridContent;
+    private LinkedList<ToDayElement> gridContent;
     private String menuState;
     private SmallBang mSmallBang;
 
@@ -150,7 +153,7 @@ public class SandBoxActivity extends AppCompatActivity
         } else if (menuState.equals(AppConstants.MENU_ITEMS_PARTIAL)) {
             menuState=AppConstants.MENU_ITEMS_NATIVE;
 
-            getSupportActionBar().setTitle(currentFlow.getName());
+            getSupportActionBar().setTitle(currentToDay.getName());
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
             invalidateOptionsMenu();
             ((MultiFunctionGridView) elementGridView).setGridFunctionState(AppConstants.GS_MCL_CHECKABLE);
@@ -187,12 +190,12 @@ public class SandBoxActivity extends AppCompatActivity
      *
      */
     private void prepareContextualContent() {
-        currentFlow = util.load(getIntent().getStringExtra(AppConstants.EXTRA_PASSING_UUID));
-        getSupportActionBar().setTitle(currentFlow.getName());
+        currentToDay = util.load(getIntent().getStringExtra(AppConstants.EXTRA_PASSING_UUID));
+        getSupportActionBar().setTitle(currentToDay.getName());
 
         gridContent.clear();
 
-        gridContent.addAll(currentFlow.getChildElements());
+        gridContent.addAll(currentToDay.getChildElements());
 
         gridAdapter = new SandBoxGridAdapter(this, gridContent,3);
         // Passes the number of elements in the Flow's child elements to set the
@@ -219,7 +222,7 @@ public class SandBoxActivity extends AppCompatActivity
 
 
         Intent in = new Intent(SandBoxActivity.this, ShowElementActivity.class);
-        in.putExtra(AppConstants.EXTRA_PASSING_UUID, currentFlow.getUuid());
+        in.putExtra(AppConstants.EXTRA_PASSING_UUID, currentToDay.getUuid());
         in.putExtra(AppConstants.EXTRA_POSITION_SELECTED, position);
 
         String transitionName = getString(R.string.transition_explode);
@@ -257,7 +260,7 @@ public class SandBoxActivity extends AppCompatActivity
      */
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 
-        FlowElement newElement;
+        ToDayElement newElement;
 
         if(requestCode == AppConstants.DESIGNER_REQUEST_CODE && resultCode==RESULT_OK) {
             newElement = data.getParcelableExtra(AppConstants.EXTRA_ELEMENT_PARCEL);
@@ -272,17 +275,17 @@ public class SandBoxActivity extends AppCompatActivity
      *
      * @param newElement the FlowElement being saved
      */
-    private void addElementToFlow(FlowElement newElement) {
-        newElement.setLocation(currentFlow.getChildCount());
+    private void addElementToFlow(ToDayElement newElement) {
+        newElement.setLocation(currentToDay.getChildCount());
 
         gridContent.add(newElement);
-        currentFlow.add(newElement);
+        currentToDay.add(newElement);
 
         gridAdapter.notifyDataSetUpdated(gridContent);
 
         setClickListeners();
 
-        util.overwrite(currentFlow.getUuid(),currentFlow);
+        util.overwrite(currentToDay.getUuid(),currentToDay);
 
     }
 
@@ -304,13 +307,13 @@ public class SandBoxActivity extends AppCompatActivity
 
 
     public void goFlowState(View v) {
-        if (currentFlow.getChildElements().isEmpty()) {
+        if (currentToDay.getChildElements().isEmpty()) {
             this.showToast(
                     "Look's like there is no elements yet!"
             );
         } else {
-            Intent in = new Intent(this, FlowStateActivity.class);
-            in.putExtra(AppConstants.EXTRA_PASSING_UUID,currentFlow.getUuid());
+            Intent in = new Intent(this, ToDayStateActivity.class);
+            in.putExtra(AppConstants.EXTRA_PASSING_UUID,currentToDay.getUuid());
             startActivity(in);
         }
     }
@@ -327,8 +330,8 @@ public class SandBoxActivity extends AppCompatActivity
     private void deleteSelection() {
         SparseBooleanArray selection = elementGridView.getCheckedItemPositions();
 
-        final LinkedList<FlowElement> reference = new LinkedList<>(gridContent);
-        final LinkedList<FlowElement> deletedChildElements = new LinkedList<>();
+        final LinkedList<ToDayElement> reference = new LinkedList<>(gridContent);
+        final LinkedList<ToDayElement> deletedChildElements = new LinkedList<>();
 
         try {
             for (int i=0; i<selection.size();i++) {
@@ -339,13 +342,13 @@ public class SandBoxActivity extends AppCompatActivity
                  */
             }
 
-            currentFlow.removeSelectedCollection(deletedChildElements);
+            currentToDay.removeSelectedCollection(deletedChildElements);
 
             gridContent.clear();
-            gridContent.addAll(currentFlow.getChildElements());
+            gridContent.addAll(currentToDay.getChildElements());
             gridAdapter.notifyDataSetUpdated(gridContent);
 
-            util.overwrite(currentFlow.getUuid(), currentFlow);
+            util.overwrite(currentToDay.getUuid(), currentToDay);
 
         } catch (Exception e) {
             Toast.makeText(this,R.string.sandbox_delete_exception,Toast.LENGTH_LONG);
@@ -356,12 +359,12 @@ public class SandBoxActivity extends AppCompatActivity
                 .setAction("UNDO", new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        currentFlow.setChildElements(reference);
-                        currentFlow.recalculateTotalTime();
+                        currentToDay.setChildElements(reference);
+                        currentToDay.recalculateTotalTime();
                         gridContent.clear();
-                        gridContent.addAll(currentFlow.getChildElements());
+                        gridContent.addAll(currentToDay.getChildElements());
                         gridAdapter.notifyDataSetUpdated(gridContent);
-                        util.overwrite(currentFlow.getUuid(),currentFlow);
+                        util.overwrite(currentToDay.getUuid(),currentToDay);
                     }
                 });
 
@@ -381,13 +384,13 @@ public class SandBoxActivity extends AppCompatActivity
     @Override
     public void reorderElements(int originalLocation, int desiredPosition) {
 
-        currentFlow.reorderChildAt(originalLocation, desiredPosition);
+        currentToDay.reorderChildAt(originalLocation, desiredPosition);
 
         gridContent.clear();
-        gridContent.addAll(currentFlow.getChildElements());
+        gridContent.addAll(currentToDay.getChildElements());
 
         gridAdapter.notifyDataSetUpdated(gridContent);
-        util.overwrite(currentFlow.getUuid(),currentFlow);
+        util.overwrite(currentToDay.getUuid(),currentToDay);
     }
 
     private void toggleFABVisibility(String fabState) {
@@ -466,20 +469,20 @@ public class SandBoxActivity extends AppCompatActivity
         TextView lifeTimeInFlow = (TextView) viewGroup.findViewById(R.id.stats_life_time_spent_in_flow);
 
         elementCount.setText(
-                String.valueOf(currentFlow.getChildCount())
+                String.valueOf(currentToDay.getChildCount())
         );
 
         timeEstimate.setText(
-                String.valueOf(currentFlow.getFormattedTime())
+                String.valueOf(currentToDay.getFormattedTime())
         );
 
         completeCount.setText(
-                String.valueOf(currentFlow.getCompletionTokens())
+                String.valueOf(currentToDay.getCompletionTokens())
         );
 
         lifeTimeInFlow.setText(
                 String.valueOf(
-                        AppUtils.buildTimerStyleTime(currentFlow.getLifeTimeInFlow()))
+                        AppUtils.buildTimerStyleTime(currentToDay.getLifeTimeInToDay()))
         );
 
         popup.setBackgroundDrawable(new BitmapDrawable(null,""));

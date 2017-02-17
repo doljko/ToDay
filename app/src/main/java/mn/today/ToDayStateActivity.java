@@ -4,7 +4,10 @@ import android.app.PendingIntent;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
+import android.support.annotation.RequiresApi;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.app.NotificationCompat;
 import android.support.v4.content.ContextCompat;
@@ -21,6 +24,12 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.baoyachi.stepview.HorizontalStepView;
+import com.google.android.gms.appindexing.Action;
+import com.google.android.gms.appindexing.AppIndex;
+import com.google.android.gms.appindexing.Thing;
+import com.google.android.gms.common.api.GoogleApiClient;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -31,13 +40,13 @@ import java.util.Random;
 
 
 public class ToDayStateActivity extends AppCompatActivity
-        implements FlowStateFragment.OnFragmentSelectedListener, FlowStateFragment.OnDataPass {
+        implements ToDayStateFragment.OnFragmentSelectedListener, ToDayStateFragment.OnDataPass {
 
-    private Flow parentFlow;
+    private ToDay parentFlow;
     private int currentElementPosition;
     private Integer[] millisInFlow;
     // Holds each currentElementPosition's completetion time matching to it's Flow Location
-    private FlowStateFragment fragment;
+    private ToDayStateFragment fragment;
     private int flowStateFlag;
     private String activityStateFlag;
     private NotificationCompat.Builder mBuilder;
@@ -45,6 +54,11 @@ public class ToDayStateActivity extends AppCompatActivity
     private HorizontalStepView stepProgress;
     private List<String> stepViewContent;
     private int attentionIconPosition;
+    /**
+     * ATTENTION: This was auto-generated to implement the App Indexing API.
+     * See https://g.co/AppIndexing/AndroidStudio for more information.
+     */
+    private GoogleApiClient client;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,7 +70,7 @@ public class ToDayStateActivity extends AppCompatActivity
         millisInFlow = new Integer[parentFlow.getChildElements().size()];
 
         overTimeFlag = AppConstants.FS_OVERTIME_FALSE;
-        flowStateFlag =AppConstants.NOT_FINISHED;
+        flowStateFlag = AppConstants.NOT_FINISHED;
         activityStateFlag = AppConstants.FS_UI_ACTIVE;
         // Check that the activity is using the layout version with
         // the fragment_container FrameLayout
@@ -70,14 +84,14 @@ public class ToDayStateActivity extends AppCompatActivity
                 return;
             }
 
-            currentElementPosition =0; //Location of starting element
+            currentElementPosition = 0; //Location of starting element
 
-            fragment = FlowStateFragment.newInstance(
+            fragment = ToDayStateFragment.newInstance(
                     parentFlow.getChildAt(currentElementPosition)
             );
 
 
-            android.support.v4.app.FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+            FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
             transaction
                     .add(R.id.flowstate_fragment_container, fragment)
                     .commit();
@@ -87,11 +101,14 @@ public class ToDayStateActivity extends AppCompatActivity
         generateNewStepViewContent();
         nextStepViewBatch();
 
+        // ATTENTION: This was auto-generated to implement the App Indexing API.
+        // See https://g.co/AppIndexing/AndroidStudio for more information.
+        client = new GoogleApiClient.Builder(this).addApi(AppIndex.API).build();
     }
 
     private void nextStepViewBatch() {
         stepProgress = (HorizontalStepView) findViewById(R.id.flowstate_step_view);
-        attentionIconPosition=0;
+        attentionIconPosition = 0;
         stepProgress
                 .setStepsViewIndicatorComplectingPosition(attentionIconPosition)
                 .setStepViewTexts(stepViewContent)
@@ -110,30 +127,29 @@ public class ToDayStateActivity extends AppCompatActivity
 
     /**
      * Bleh.. Indexes
-     *
+     * <p>
      * Generates the StepView's TextView content (ie. the elements' rank) in batches of 4.
      * If not enough elements are avail for a 4-sized batch, adjusts batch size
-     *
+     * <p>
      * 1-indexed location    |_1__2__3__4_|  |_5__6__x__x_| << 4 Sized Batches, x = non existent element [size() and real life]
-     *      0-indexed         [0][1][2][3]    [4][5][6][7]  <<
-     *
+     * 0-indexed         [0][1][2][3]    [4][5][6][7]  <<
      */
     private void generateNewStepViewContent() {
         stepViewContent = new ArrayList<>();
         int batchSize = 4;
 
-        int elementLocation = currentElementPosition +1;
+        int elementLocation = currentElementPosition + 1;
         // Gives non 0-index location value
         // currentElementPosition is based on a 0 index.
 
-        if (currentElementPosition+batchSize>parentFlow.getChildCount()) {
-            batchSize = (parentFlow.getChildCount()%batchSize);
+        if (currentElementPosition + batchSize > parentFlow.getChildCount()) {
+            batchSize = (parentFlow.getChildCount() % batchSize);
             // determines remainder of elements that don't fit into standard 4 memeber batch
-            for (int i = 0; i<batchSize; i++){
+            for (int i = 0; i < batchSize; i++) {
                 stepViewContent.add(String.valueOf(elementLocation++));
             }
 
-            for (int i=0; i<4-batchSize;i++) {
+            for (int i = 0; i < 4 - batchSize; i++) {
                 stepViewContent.add("");
             }
 
@@ -142,11 +158,10 @@ public class ToDayStateActivity extends AppCompatActivity
 
         } else {
            /* Adds content to List */
-            for (int i = 0; i<batchSize; i++){
+            for (int i = 0; i < batchSize; i++) {
                 stepViewContent.add(String.valueOf(elementLocation++));
             }
         }
-
 
 
     }
@@ -175,7 +190,7 @@ public class ToDayStateActivity extends AppCompatActivity
                 .setPositiveButton("Understood", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
                         fragment.notifyBackPressed();
-                        flowStateFlag=AppConstants.EARLY_EXIT;
+                        flowStateFlag = AppConstants.EARLY_EXIT;
                         buildCustomQuitToast(ToDayStateActivity.this).show();
                         ToDayStateActivity.super.onBackPressed();
 
@@ -190,6 +205,7 @@ public class ToDayStateActivity extends AppCompatActivity
 
     /**
      * Displays custom toast with random phrase from resource file.
+     *
      * @param context
      */
     private Toast buildCustomQuitToast(Context context) {
@@ -213,8 +229,9 @@ public class ToDayStateActivity extends AppCompatActivity
 
     /**
      * Retrieves the time taken to complete the task while creating a new fragment for the next task.
-     *
+     * <p>
      * If there is no final task an exception is thrown and the Flow is completed
+     *
      * @param v
      */
     @Override
@@ -225,7 +242,7 @@ public class ToDayStateActivity extends AppCompatActivity
         try {
             fragment.cancelTimerAndPassData(overTimeFlag);
 
-            fragment = FlowStateFragment.newInstance(
+            fragment = ToDayStateFragment.newInstance(
                     parentFlow
                             .getChildElements().get(
                             ++currentElementPosition
@@ -242,31 +259,28 @@ public class ToDayStateActivity extends AppCompatActivity
                     .commit();
 
 
-
         } catch (IndexOutOfBoundsException e) {
                 /* Index Out of Bounds Exception Thrown When Flow Ends */
 
-            if (fragment!=null) {
-                flowStateFlag =AppConstants.FINISHED;
+            if (fragment != null) {
+                flowStateFlag = AppConstants.FINISHED;
                 transaction.remove(fragment);
                 transaction.commit();
                 transaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_CLOSE);
             }
 
         }
-        if (flowStateFlag ==AppConstants.FINISHED){
+        if (flowStateFlag == AppConstants.FINISHED) {
             goToFinishScreen();
         }
     }
-
-
 
 
     /**
      * Parses recieved data and adds to the Integer[] tracking the amount of time taken for each
      * task to complete
      *
-     * @param recievedData , a bundle containing the desired completion time data
+     * @param recievedData  , a bundle containing the desired completion time data
      * @param elementNumber , the location of the element in the flow and also the string used as a key
      */
     @Override
@@ -285,7 +299,7 @@ public class ToDayStateActivity extends AppCompatActivity
         Intent i = new Intent(this, FinishedFlowActivity.class);
         i.putExtra(AppConstants.EXTRA_PASSING_UUID, parentFlow.getUuid());
 
-        int timeInFlow =calculateTimeInFlow();
+        int timeInFlow = calculateTimeInFlow();
 
         i.putExtra(
                 AppConstants.EXTRA_FORMATTED_TIME,
@@ -309,7 +323,7 @@ public class ToDayStateActivity extends AppCompatActivity
     private int calculateTimeInFlow() {
         int time = 0;
 
-        for (int i = 0; i <=millisInFlow.length-1; i++) {
+        for (int i = 0; i <= millisInFlow.length - 1; i++) {
             time = time + millisInFlow[i];
         }
 
@@ -318,11 +332,12 @@ public class ToDayStateActivity extends AppCompatActivity
 
     /**
      * Creates dialog for user to input additional time
-     *
+     * <p>
      * Adds flag to notify the fragment to pass the overTime value when cancelTimerPassData() method is called
      *
      * @param v
      */
+    @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN_MR1)
     @Override
     public void onMoreTimeSelected(View v) {
         overTimeFlag = AppConstants.FS_OVERTIME_TRUE;
@@ -356,6 +371,7 @@ public class ToDayStateActivity extends AppCompatActivity
         customDialog.show();
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN_MR1)
     private AlertDialog.Builder customDialog(EditText inTime) {
         final EditText in = inTime;
         final AlertDialog.Builder newFlowDialog = new AlertDialog.Builder(ToDayStateActivity.this);
@@ -389,10 +405,9 @@ public class ToDayStateActivity extends AppCompatActivity
     @Override
     public void onPause() {
         super.onPause();
-        if (flowStateFlag !=AppConstants.FINISHED && flowStateFlag != AppConstants.EARLY_EXIT) {
+        if (flowStateFlag != AppConstants.FINISHED && flowStateFlag != AppConstants.EARLY_EXIT) {
             onPauseNotifier();
         }
-
 
 
     }
@@ -400,7 +415,6 @@ public class ToDayStateActivity extends AppCompatActivity
     /**
      * Sets up and sends out a notification to the user keeping track of current time in Flow
      * also notifies current fragment.
-     *
      */
     private void onPauseNotifier() {
         mBuilder = buildNotification();
@@ -418,7 +432,7 @@ public class ToDayStateActivity extends AppCompatActivity
     private NotificationCompat.Builder buildNotification() {
         Intent notificationIntent = new Intent(getApplicationContext(), ToDayStateActivity.class);
         notificationIntent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP)
-                .putExtra(AppConstants.EXTRA_PASSING_UUID,parentFlow.getUuid());
+                .putExtra(AppConstants.EXTRA_PASSING_UUID, parentFlow.getUuid());
         PendingIntent intent = PendingIntent.getActivity(this, 0, notificationIntent, PendingIntent.FLAG_CANCEL_CURRENT);
 
         NotificationCompat.Builder builder =
@@ -438,10 +452,45 @@ public class ToDayStateActivity extends AppCompatActivity
 
     @Override
     protected void onResume() {
-        activityStateFlag=AppConstants.FS_UI_ACTIVE;
+        activityStateFlag = AppConstants.FS_UI_ACTIVE;
         fragment.uiActive(activityStateFlag);
         super.onResume();
 
     }
 
+    /**
+     * ATTENTION: This was auto-generated to implement the App Indexing API.
+     * See https://g.co/AppIndexing/AndroidStudio for more information.
+     */
+    public Action getIndexApiAction() {
+        Thing object = new Thing.Builder()
+                .setName("ToDayState Page") // TODO: Define a title for the content shown.
+                // TODO: Make sure this auto-generated URL is correct.
+                .setUrl(Uri.parse("http://[ENTER-YOUR-URL-HERE]"))
+                .build();
+        return new Action.Builder(Action.TYPE_VIEW)
+                .setObject(object)
+                .setActionStatus(Action.STATUS_TYPE_COMPLETED)
+                .build();
+    }
+
+    @Override
+    public void onStart() {
+        super.onStart();
+
+        // ATTENTION: This was auto-generated to implement the App Indexing API.
+        // See https://g.co/AppIndexing/AndroidStudio for more information.
+        client.connect();
+        AppIndex.AppIndexApi.start(client, getIndexApiAction());
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+
+        // ATTENTION: This was auto-generated to implement the App Indexing API.
+        // See https://g.co/AppIndexing/AndroidStudio for more information.
+        AppIndex.AppIndexApi.end(client, getIndexApiAction());
+        client.disconnect();
+    }
 }

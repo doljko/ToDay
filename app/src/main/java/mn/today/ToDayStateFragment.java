@@ -154,7 +154,7 @@ public class ToDayStateFragment extends Fragment {
         progressBar = (ProgressBar) view.findViewById(R.id.progress_bar);
         final TextView next = (TextView) view.findViewById(R.id.fragment_fe_next);
 
-        element = (FlowElement)getArguments().get(AppConstants.FRAGMENT_FLOW_STATE);
+        element = (ToDayElement) getArguments().get(AppConstants.FRAGMENT_FLOW_STATE);
         assert element != null;
 
         progress = AppUtils.millisToSecs(element.getTimeEstimate());
@@ -213,10 +213,10 @@ public class ToDayStateFragment extends Fragment {
      * @param e
      * @return
      */
-    public static FlowStateFragment newInstance(FlowElement e) {
+    public static ToDayStateFragment newInstance(ToDayElement e) {
         Bundle args = new Bundle();
         args.putParcelable(AppConstants.FRAGMENT_FLOW_STATE, e);
-        FlowStateFragment fragment = new FlowStateFragment();
+        ToDayStateFragment fragment = new ToDayStateFragment();
         fragment.setArguments(args);
         return fragment;
     }
@@ -258,7 +258,7 @@ public class ToDayStateFragment extends Fragment {
     /**
      * Blank constructor
      */
-    public FlowStateFragment() {
+    public ToDayStateFragment() {
 
     }
 

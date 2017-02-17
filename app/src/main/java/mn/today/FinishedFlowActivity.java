@@ -42,7 +42,7 @@ public class FinishedFlowActivity extends AppCompatActivity {
         AppDataManager appData = new AppDataManager(this);
         ExportDataManager statsData = new ExportDataManager(this);
 
-        Flow finishedFlow = appData.load(getIntent().getStringExtra(AppConstants.EXTRA_PASSING_UUID));
+        ToDay finishedFlow = appData.load(getIntent().getStringExtra(AppConstants.EXTRA_PASSING_UUID));
         finishedFlow.addCompletionToken();
         finishedFlow.addToLifeTimeStats(millisInFlow);
 
@@ -61,7 +61,7 @@ public class FinishedFlowActivity extends AppCompatActivity {
 
     }
 
-    private String[] prepareCSVExport(Flow finishedFlow, int actualMillisInFlow) {
+    private String[] prepareCSVExport(ToDay finishedFlow, int actualMillisInFlow) {
         /*
             ArrayList[0] = flowName;
             ArrayList[1] = childrenCount
@@ -106,9 +106,9 @@ public class FinishedFlowActivity extends AppCompatActivity {
 
     public void repeatRun(View v) {
         AppDataManager util = new AppDataManager(this);
-        Flow flowToRepeat = util.load(getIntent().getStringExtra(AppConstants.EXTRA_PASSING_UUID));
+        ToDay flowToRepeat = util.load(getIntent().getStringExtra(AppConstants.EXTRA_PASSING_UUID));
 
-        Intent in = new Intent(this, FlowStateActivity.class);
+        Intent in = new Intent(this, ToDayStateActivity.class);
         in.putExtra(AppConstants.EXTRA_PASSING_UUID,flowToRepeat.getUuid());
 
         startActivity(in);

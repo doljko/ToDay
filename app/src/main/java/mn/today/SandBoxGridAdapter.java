@@ -6,6 +6,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
+import org.askerov.dynamicgrid.BaseDynamicGridAdapter;
+
 import java.util.LinkedList;
 import java.util.List;
 
@@ -20,7 +22,7 @@ public class SandBoxGridAdapter extends BaseDynamicGridAdapter {
     private Context mContext;
 
 
-    public SandBoxGridAdapter(Context c, LinkedList<FlowElement> res, int colNum) {
+    public SandBoxGridAdapter(Context c, LinkedList<ToDayElement> res, int colNum) {
         super(c,res,colNum);
         /* Must give resource List to the super class to handle animation and reorder */
         /* Resource list must be stable (ie. reset) */
