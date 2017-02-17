@@ -34,7 +34,7 @@ public class AppDataManager implements Parcelable {
     private static File appDataFile;
 
     /* MUST BE STATIC & GLOBAL Creates file directory for the data files please don't delete again :))) */
-    private static HashMap<String,Flow> dataMap;
+    private static HashMap<String,ToDay> dataMap;
     private static Context mContext;
 
     /** Reads JSON data from file and builds it's flowList
@@ -55,7 +55,7 @@ public class AppDataManager implements Parcelable {
      * @param keyToSave key being saved
      * @param objectToSave Flow Object being saved
      */
-    public void save(String keyToSave, Flow objectToSave) {
+    public void save(String keyToSave, ToDay objectToSave) {
         dataMap.put(keyToSave,objectToSave);
         saveAppFile();
     }
@@ -67,7 +67,7 @@ public class AppDataManager implements Parcelable {
      * @param keyToLoad key paired with value to load
      * @return
      */
-    public Flow load(String keyToLoad) {
+    public ToDay load(String keyToLoad) {
         return dataMap.get(keyToLoad);
     }
 
@@ -78,7 +78,7 @@ public class AppDataManager implements Parcelable {
      * @param keyToOverwrite key paired with value to overwrite
      * @param valueToWrite new value to overwrite with
      */
-    public void overwrite(String keyToOverwrite, Flow valueToWrite) {
+    public void overwrite(String keyToOverwrite, ToDay valueToWrite) {
         dataMap.put(keyToOverwrite, valueToWrite);
         saveAppFile();
     }
@@ -109,7 +109,7 @@ public class AppDataManager implements Parcelable {
      * present
      * @return
      */
-    public ArrayList<Flow> generateArrayList(){
+    public ArrayList<ToDay> generateArrayList(){
         return new ArrayList<>(dataMap.values());
     }
 
@@ -204,8 +204,8 @@ public class AppDataManager implements Parcelable {
      *
      * @param context the context in which the method is being called
      */
-    private HashMap<String,Flow> buildMap(Context context) {
-        Type type = new TypeToken<HashMap<String, Flow>>() {
+    private HashMap<String,ToDay> buildMap(Context context) {
+        Type type = new TypeToken<HashMap<String, ToDay>>() {
         }.getType();
 
         try {

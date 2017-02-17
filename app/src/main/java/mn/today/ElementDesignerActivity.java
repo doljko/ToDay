@@ -70,7 +70,7 @@ public class ElementDesignerActivity extends AppCompatActivity {
 
         if (!elementName.equals("") && !elementTime.equals("")) {
 
-            FlowElement newElement = buildNewElement(elementName,elementTime,timeUnits);
+            ToDayElement newElement = buildNewElement(elementName,elementTime,timeUnits);
 
 
             Intent returnData = new Intent();
@@ -83,7 +83,7 @@ public class ElementDesignerActivity extends AppCompatActivity {
         }
     }
 
-    private FlowElement buildNewElement(String elementName, String elementTime, String timeUnits) {
+    private ToDayElement buildNewElement(String elementName, String elementTime, String timeUnits) {
         if (timeUnits==null) {
             timeUnits = AppConstants.UNIT_MINUTES;
         }
@@ -109,7 +109,7 @@ public class ElementDesignerActivity extends AppCompatActivity {
                 break;
         }
 
-        return new FlowElement(elementName, timeInMillis, timeUnits);
+        return new ToDayElement(elementName, timeInMillis, timeUnits);
     }
 
     /**
