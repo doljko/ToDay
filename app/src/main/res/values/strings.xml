@@ -53,6 +53,8 @@
     <string name="monday">Даваа</string>
     <string name="open_drawer">Open drawer</string>
     <string name="close_drawer">Close drawer</string>
+    <string name="skip">Алгасах</string>
+    <string name="next">Дараагийн</string>
     <string name="calendars">Календарууд</string>
     <string name="error_location">Таны байршилыг тогтоох боломжгүй байна</string>
     <string name="title_activity_view">ViewActivity</string>
