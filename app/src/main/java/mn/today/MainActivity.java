@@ -44,7 +44,6 @@ import java.util.HashSet;
 import mn.today.content.CalendarCursor;
 import mn.today.content.EventCursor;
 import mn.today.content.EventsQueryHandler;
-import mn.today.weather.WeatherSyncService;
 import mn.today.widget.CalendarSelectionView;
 import mn.today.widget.EventCalendarView;
 import mn.today.widget.ToDayAdapter;
@@ -59,17 +58,6 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
     private static final int LOADER_CALENDARS = 0;
     private static final int LOADER_LOCAL_CALENDAR = 1;
 
-    private final SharedPreferences.OnSharedPreferenceChangeListener mWeatherChangeListener =
-            new SharedPreferences.OnSharedPreferenceChangeListener() {
-                @Override
-                public void onSharedPreferenceChanged(SharedPreferences sharedPreferences,
-                                                      String key) {
-                    if (TextUtils.equals(key, WeatherSyncService.PREF_WEATHER_TODAY) ||
-                            TextUtils.equals(key, WeatherSyncService.PREF_WEATHER_TOMORROW)) {
-                        loadWeather();
-                    }
-                }
-            };
     private final CalendarSelectionView.OnSelectionChangeListener mCalendarSelectionListener
             = new CalendarSelectionView.OnSelectionChangeListener() {
         @Override
@@ -99,7 +87,6 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setUpPreferences();
         setContentView(R.layout.activity_main);
         setSupportActionBar((Toolbar) findViewById(R.id.toolbar));
         //noinspection ConstantConditions
@@ -169,7 +156,6 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
             if (!mWeatherEnabled && !checkLocationPermissions()) {
                 requestLocationPermissions();
             } else {
-                toggleWeather();
             }
             return true;
         }
@@ -232,8 +218,6 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
                 .putString(CalendarUtils.PREF_CALENDAR_EXCLUSIONS,
                         TextUtils.join(SEPARATOR, mExcludedCalendarIds))
                 .apply();
-        PreferenceManager.getDefaultSharedPreferences(this)
-                .unregisterOnSharedPreferenceChangeListener(mWeatherChangeListener);
     }
 
     @Override
@@ -260,7 +244,6 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
                 break;
             case REQUEST_CODE_LOCATION:
                 if (checkLocationPermissions()) {
-                    toggleWeather();
                 } else {
                     explainLocationPermissions();
                 }
@@ -303,19 +286,6 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
         mCalendarSelectionView.swapCursor(null, null);
     }
 
-    private void setUpPreferences() {
-        SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(this);
-        mWeatherEnabled = mPendingWeatherEnabled = sp.getBoolean(
-                WeatherSyncService.PREF_WEATHER_ENABLED, false);
-        String exclusions = PreferenceManager.getDefaultSharedPreferences(this)
-                .getString(CalendarUtils.PREF_CALENDAR_EXCLUSIONS, null);
-        if (!TextUtils.isEmpty(exclusions)) {
-            mExcludedCalendarIds.addAll(Arrays.asList(exclusions.split(SEPARATOR)));
-        }
-        CalendarUtils.sWeekStart = sp.getInt(CalendarUtils.PREF_WEEK_START, Calendar.SUNDAY);
-        PreferenceManager.getDefaultSharedPreferences(this)
-                .registerOnSharedPreferenceChangeListener(mWeatherChangeListener);
-    }
 
     private void setUpContentView() {
         mCoordinatorLayout = findViewById(R.id.coordinator_layout);
@@ -406,22 +376,9 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
         mFabAdd.show();
         mCalendarView.setCalendarAdapter(new CalendarCursorAdapter(this, mExcludedCalendarIds));
         mTodayView.setAdapter(new ToDayCursorAdapter(this, mExcludedCalendarIds));
-        loadWeather();
     }
 
-    private void toggleWeather() {
-        mWeatherEnabled = mPendingWeatherEnabled;
-        PreferenceManager.getDefaultSharedPreferences(this)
-                .edit()
-                .putBoolean(WeatherSyncService.PREF_WEATHER_ENABLED, mWeatherEnabled)
-                .apply();
-        supportInvalidateOptionsMenu();
-        loadWeather();
-    }
 
-    private void loadWeather() {
-        mTodayView.setWeather(mWeatherEnabled ? WeatherSyncService.getSyncedWeather(this) : null);
-    }
 
     private void createLocalCalendar() {
         String name = getString(R.string.default_calendar_name);
