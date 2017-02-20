@@ -24,7 +24,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="10dp"
-        android:layout_toEndOf="@id/fragment_se_task_img">
+        android:layout_toEndOf="@id/fragment_se_task_img"
+        android:layout_toRightOf="@id/fragment_se_task_img">
 
         <TextView
             android:textAppearance=
@@ -53,7 +54,8 @@
         android:id="@+id/fragment_se_switcher_time"
         android:layout_marginLeft="10dp"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" >
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/fragment_se_task_img">
 
         <TextView
             android:text="TIME"
@@ -102,7 +104,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:textStyle="bold"/>
+        android:textStyle="bold"
+        android:layout_alignLeft="@+id/fragment_se_task_img" />
 
     <ViewSwitcher
         android:layout_marginTop="10dp"
@@ -112,7 +115,8 @@
         xmlns:android="http://schemas.android.com/apk/res/android"
         android:id="@+id/fragment_se_switcher_notes"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" >
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true">
 
         <TextView
             android:textAppearance=
@@ -143,7 +147,8 @@
         android:translationZ="3dp"
         android:layout_alignStart="@id/fragment_se_task_img"
         android:layout_marginLeft="35dp"
-        android:visibility="invisible"/>
+        android:visibility="invisible"
+        android:layout_alignLeft="@id/fragment_se_task_img" />
 
     <Button
         android:paddingLeft="@dimen/x2_activity_margin"

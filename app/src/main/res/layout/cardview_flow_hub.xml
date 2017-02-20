@@ -65,7 +65,9 @@
                 android:layout_height="20dp"
                 android:layout_marginEnd="125dp"
                 android:layout_centerVertical="true"
-                android:layout_alignParentEnd="true" />
+                android:layout_alignParentEnd="true"
+                android:layout_marginRight="125dp"
+                android:layout_alignParentRight="true" />
             <!-- Insert Flow Element Icon -->
 
             <TextView
@@ -87,7 +89,8 @@
                 android:layout_centerVertical="true"
                 android:layout_alignStart="@+id/item_element_icon"
                 android:layout_toRightOf="@+id/item_element_icon"
-                android:layout_marginLeft="55dp" />
+                android:layout_marginLeft="55dp"
+                android:layout_alignLeft="@+id/item_element_icon" />
             <!-- Insert Flow Element Icon -->
 
             <TextView

@@ -18,7 +18,7 @@
             android:text="@string/next_element"
             android:layout_below="@+id/designer_task_element"
             android:layout_marginTop="25dp"
-            />
+            android:layout_alignLeft="@+id/designer_task_element" />
 
         <TextView
             android:onClick="onMoreTimeSelected"
@@ -35,7 +35,8 @@
             android:layout_centerHorizontal="true"
             android:layout_below="@+id/fragment_fe_next"
             android:layout_marginTop="25dp"
-            android:layout_marginEnd="20dp"/>
+            android:layout_marginEnd="20dp"
+            android:layout_marginRight="20dp" />
 
 
     <TextView

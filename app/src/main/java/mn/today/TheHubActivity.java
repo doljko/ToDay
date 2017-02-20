@@ -60,7 +60,7 @@ import java.util.Calendar;
 public class TheHubActivity extends AppCompatActivity implements HubRecyclerViewAdapter.onCardClickListener, NavigationView.OnNavigationItemSelectedListener, GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener {
 
     /* Data Management and Export */
-    private GoogleApiClient  mGoogleApiClient;
+//    private GoogleApiClient  mGoogleApiClient;
     private AppDataManager manager;
     // Manages the saving of data and Flow objects to internal storage
 
@@ -114,12 +114,12 @@ public class TheHubActivity extends AppCompatActivity implements HubRecyclerView
 
         // ATTENTION: This "addApi(AppIndex.API)"was auto-generated to implement the App Indexing API.
         // See https://g.co/AppIndexing/AndroidStudio for more information.
-        mGoogleApiClient = new GoogleApiClient.Builder(this)
-                .addApi(Drive.API)
-                .addScope(Drive.SCOPE_FILE)
-                .addConnectionCallbacks(this)
-                .addOnConnectionFailedListener(this)
-                .addApi(AppIndex.API).build();
+//        mGoogleApiClient = new GoogleApiClient.Builder(this)
+//                .addApi(Drive.API)
+//                .addScope(Drive.SCOPE_FILE)
+//                .addConnectionCallbacks(this)
+//                .addOnConnectionFailedListener(this)
+//                .addApi(AppIndex.API).build();
     }
 
     private void generateDrawerGreeting(NavigationView view) {
@@ -202,6 +202,7 @@ public class TheHubActivity extends AppCompatActivity implements HubRecyclerView
     }
 
     /* Invokes methods based on the icon picked in the toolbar */
+    @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN_MR1)
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         /* When the user selects one of the app bar items, the system
@@ -243,15 +244,15 @@ public class TheHubActivity extends AppCompatActivity implements HubRecyclerView
         menuState=AppConstants.MENU_ITEMS_NATIVE;
         invalidateOptionsMenu();
         populateRecycleView();
-        if (mGoogleApiClient == null) {
-            mGoogleApiClient = new GoogleApiClient.Builder(this)
-                    .addApi(Drive.API)
-                    .addScope(Drive.SCOPE_FILE)
-                    .addConnectionCallbacks(this)
-                    .addOnConnectionFailedListener(this)
-                    .build();
-        }
-        mGoogleApiClient.connect();
+//        if (mGoogleApiClient == null) {
+//            mGoogleApiClient = new GoogleApiClient.Builder(this)
+//                    .addApi(Drive.API)
+//                    .addScope(Drive.SCOPE_FILE)
+//                    .addConnectionCallbacks(this)
+//                    .addOnConnectionFailedListener(this)
+//                    .build();
+//        }
+//        mGoogleApiClient.connect();
     }
 
 
@@ -311,6 +312,7 @@ public class TheHubActivity extends AppCompatActivity implements HubRecyclerView
      *  user input.
      *
      */
+    @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN_MR1)
     public void createNewFlow() {
 
         //Create edit text field for name entry
@@ -642,9 +644,9 @@ public class TheHubActivity extends AppCompatActivity implements HubRecyclerView
     @Override
     protected void onPause() {
         dismissPopups();
-        if (mGoogleApiClient != null) {
-            mGoogleApiClient.disconnect();
-        }
+//        if (mGoogleApiClient != null) {
+//            mGoogleApiClient.disconnect();
+//        }
         super.onPause();
     }
 
@@ -665,7 +667,7 @@ public class TheHubActivity extends AppCompatActivity implements HubRecyclerView
     protected void onStart() {
         super.onStart();
         // Monitor launch times and interval from installation
-        mGoogleApiClient.connect();
+//        mGoogleApiClient.connect();
 
         RateThisApp.onStart(this);
         RateThisApp.Config config = new RateThisApp.Config(10, 10);
@@ -681,7 +683,7 @@ public class TheHubActivity extends AppCompatActivity implements HubRecyclerView
         RateThisApp.showRateDialogIfNeeded(this);
         // ATTENTION: This was auto-generated to implement the App Indexing API.
         // See https://g.co/AppIndexing/AndroidStudio for more information.
-        AppIndex.AppIndexApi.start(mGoogleApiClient, getIndexApiAction());
+//        AppIndex.AppIndexApi.start(mGoogleApiClient, getIndexApiAction());
     }
 
     @Override
@@ -725,22 +727,22 @@ public class TheHubActivity extends AppCompatActivity implements HubRecyclerView
 
                         MetadataChangeSet metadataChangeSet = new MetadataChangeSet.Builder()
                                 .setMimeType("text/html").build();
-                        IntentSender intentSender = Drive.DriveApi
-                                .newCreateFileActivityBuilder()
-                                .setInitialMetadata(metadataChangeSet)
-                                .setInitialDriveContents(result.getDriveContents())
-                                .build(mGoogleApiClient);
-                        try {
-                            startIntentSenderForResult(intentSender,
-                                    AppConstants.EXPORT_CREATOR_REQUEST_CODE, null, 0, 0, 0);
-                        } catch (IntentSender.SendIntentException e) {
-                            AppUtils.showMessage(TheHubActivity.this, "Data could not be exported");
-                        }
+//                        IntentSender intentSender = Drive.DriveApi
+//                                .newCreateFileActivityBuilder()
+//                                .setInitialMetadata(metadataChangeSet)
+//                                .setInitialDriveContents(result.getDriveContents())
+//                                .build(mGoogleApiClient);
+//                        try {
+//                            startIntentSenderForResult(intentSender,
+//                                    AppConstants.EXPORT_CREATOR_REQUEST_CODE, null, 0, 0, 0);
+//                        } catch (IntentSender.SendIntentException e) {
+//                            AppUtils.showMessage(TheHubActivity.this, "Data could not be exported");
+//                        }
                     }
                 };
 
-        Drive.DriveApi.newDriveContents(mGoogleApiClient)
-                .setResultCallback(contentsCallback);
+//        Drive.DriveApi.newDriveContents(mGoogleApiClient)
+//                .setResultCallback(contentsCallback);
     }
 
 
@@ -750,7 +752,7 @@ public class TheHubActivity extends AppCompatActivity implements HubRecyclerView
         switch (requestCode) {
             case AppConstants.EXPORT_RESOLVE_CONNECTION_REQUEST_CODE:
                 if (resultCode == RESULT_OK) {
-                    mGoogleApiClient.connect();
+//                    mGoogleApiClient.connect();
                 }
                 break;
             case AppConstants.EXPORT_CREATOR_REQUEST_CODE:
@@ -807,9 +809,9 @@ public class TheHubActivity extends AppCompatActivity implements HubRecyclerView
     /**
      * Getter for the {@code GoogleApiClient}.
      */
-    public GoogleApiClient getGoogleApiClient() {
-        return mGoogleApiClient;
-    }
+//    public GoogleApiClient getGoogleApiClient() {
+//        return mGoogleApiClient;
+//    }
 
     /**
      * ATTENTION: This was auto-generated to implement the App Indexing API.
@@ -831,9 +833,9 @@ public class TheHubActivity extends AppCompatActivity implements HubRecyclerView
     public void onStop() {
         super.onStop();
 
-        // ATTENTION: This was auto-generated to implement the App Indexing API.
-        // See https://g.co/AppIndexing/AndroidStudio for more information.
-        AppIndex.AppIndexApi.end(mGoogleApiClient, getIndexApiAction());
-        mGoogleApiClient.disconnect();
+//        // ATTENTION: This was auto-generated to implement the App Indexing API.
+//        // See https://g.co/AppIndexing/AndroidStudio for more information.
+//        AppIndex.AppIndexApi.end(mGoogleApiClient, getIndexApiAction());
+//        mGoogleApiClient.disconnect();
     }
 }

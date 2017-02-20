@@ -28,13 +28,13 @@
         android:layout_gravity="center_vertical"
         android:layout_alignParentLeft="false"
         android:layout_alignParentTop="false"
-        android:layout_alignParentEnd="false"
         android:layout_alignParentStart="false"
         android:layout_toStartOf="@id/designer_task_element"
         android:layout_alignParentBottom="false"
         android:layout_below="@+id/designer_task_element"
         android:layout_marginTop="30dp"
-        android:layout_marginRight="10dp" />
+        android:layout_marginRight="10dp"
+        android:layout_toLeftOf="@id/designer_task_element" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -56,7 +56,9 @@
         android:layout_toLeftOf="@+id/designer_label_img"
         android:layout_marginLeft="15dp"
         android:layout_alignBottom="@+id/designer_label_img"
-        android:layout_marginBottom="12dp" />
+        android:layout_marginBottom="12dp"
+        android:layout_alignParentRight="false"
+        android:layout_toRightOf="@+id/designer_label_img" />
 
     <ImageView
         android:contentDescription="Image of timer"
@@ -69,7 +71,8 @@
         android:layout_alignParentTop="false"
         android:layout_below="@+id/designer_label_img"
         android:layout_marginTop="25dp"
-        android:layout_alignStart="@id/designer_label_img" />
+        android:layout_alignStart="@id/designer_label_img"
+        android:layout_alignLeft="@id/designer_label_img" />
     <!--TODO implement drawableLeft to this view and make things great again -->
 
     <EditText
@@ -82,7 +85,8 @@
         android:hint="@string/hint_zero"
         android:maxLength="2"
         android:layout_alignTop="@+id/designer_timer_img"
-        android:layout_alignStart="@+id/designer_name_input" />
+        android:layout_alignStart="@+id/designer_name_input"
+        android:layout_alignLeft="@+id/designer_name_input" />
 
     <Spinner
         android:layout_width="wrap_content"
@@ -104,7 +108,8 @@
         android:src="@drawable/done_black_48dp"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:onClick="doneElement" />
+        android:onClick="doneElement"
+        android:layout_alignParentRight="true" />
 
     <ImageView
         android:contentDescription="Image of X"
@@ -115,6 +120,7 @@
         android:src="@drawable/cancel_black_48dp"
         android:layout_alignBottom="@+id/designer_done_element"
         android:id="@+id/designer_forget_element"
-        android:onClick="forgetElement" />
+        android:onClick="forgetElement"
+        android:layout_alignParentLeft="true" />
 
 </RelativeLayout>
