@@ -73,7 +73,7 @@
     <string name="action_delete_flow">Төлөвлөгөө устгах</string>
     <string name="describe_element_count">Төлөвлөгөөнүүд</string>
     <string name="title_activity_flow_state">FlowStateActivity</string>
-    <string name="next_element">Дараагийн</string>
+    <string name="next_element">Дараа</string>
     <string name="more_time">Илүү хугацаа!</string>
     <string name="task_flag_description">An image of a blank flag outline</string>
     <string name="timer_description">An image of a timer.</string>
@@ -185,17 +185,17 @@ SOFTWARE."
 
     <string name="start">GOT IT</string>
 
-    <string name="slide_1_title">Hello Food!</string>
-    <string name="slide_1_desc">The easiest way to order food from your favourite restaurant!</string>
+    <string name="slide_1_title">Төлөвлөгөөгөө гарга!</string>
+    <string name="slide_1_desc">Та хийх ажлынхаа төлөвлөгөөг гаргах боломжтой!</string>
 
-    <string name="slide_2_title">Movie Tickets</string>
-    <string name="slide_2_desc">Book movie tickets for your family and friends!</string>
+    <string name="slide_2_title">Зорилгуудаа үүсгэ</string>
+    <string name="slide_2_desc">Та өөрийн зорилгоо үүсгэж түүндээ хүрээрэй!</string>
 
-    <string name="slide_3_title">Great Discounts</string>
-    <string name="slide_3_desc">Best discounts on every single service we offer!</string>
+    <string name="slide_3_title">Pomodoro техник</string>
+    <string name="slide_3_desc">Анхаарлаа төвлөрүүлэхэд тань туслах pomodoro техник!</string>
 
-    <string name="slide_4_title">World Travel</string>
-    <string name="slide_4_desc">Book tickets of any transportation and travel the world!</string>
+    <string name="slide_4_title">Үр дүн</string>
+    <string name="slide_4_desc">Та өөрийн гүйцэтгэсэн ажлуудаа графикаар харах боломжтой!</string>
 
     <string name="play_again_desc">To see the welcome slider again, goto Settings -> apps -> welcome slider -> clear data</string>
     <string name="play_again">Play Again</string>

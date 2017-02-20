@@ -119,7 +119,9 @@
         <activity
             android:name=".WelcomeActivity"
             android:label="@string/title_activity_welcome"
-            android:theme="@style/AppTheme"></activity>
+            android:theme="@style/AppThemeFull">
+
+        </activity>
     </application>
 
 </manifest>
