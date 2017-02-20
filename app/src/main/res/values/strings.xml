@@ -59,22 +59,22 @@
     <string name="error_location">Таны байршилыг тогтоох боломжгүй байна</string>
     <string name="title_activity_view">ViewActivity</string>
     <string name="activity_the_hub">The Hub</string>
-    <string name="action_settings">Settings</string>
-    <string name="new_task_name">Task name</string>
+    <string name="action_settings">Тохиргоо</string>
+    <string name="new_task_name">Ажлын нэр</string>
     <string-array name="select_time">
         <item>minutes</item>
         <item>hours</item>
     </string-array>
-    <string name="action_new_flow"> Create Flow </string>
-    <string name="dialog_flow_name">Create Flow</string>
-    <string name="dialog_create">CREATE</string>
-    <string name="action_add_flow_element">Add flow element</string>
-    <string name="empty_list">Look\'s like there\'s nothing here&#8230;</string>
-    <string name="action_delete_flow">Delete Flows</string>
-    <string name="describe_element_count">Elements in this flow</string>
+    <string name="action_new_flow">Төлөвлөгөө нэмэх</string>
+    <string name="dialog_flow_name">Төлөвлөгөө нэмэх</string>
+    <string name="dialog_create">НЭМЭХ</string>
+    <string name="action_add_flow_element">Төлөвлөгөө нэмэх</string>
+    <string name="empty_list">Хоосон байна&#8230;</string>
+    <string name="action_delete_flow">Төлөвлөгөө устгах</string>
+    <string name="describe_element_count">Төлөвлөгөөнүүд</string>
     <string name="title_activity_flow_state">FlowStateActivity</string>
-    <string name="next_element">Next</string>
-    <string name="more_time">More time!</string>
+    <string name="next_element">Дараагийн</string>
+    <string name="more_time">Илүү хугацаа!</string>
     <string name="task_flag_description">An image of a blank flag outline</string>
     <string name="timer_description">An image of a timer.</string>
     <string name="apache_license_text">
@@ -283,7 +283,7 @@
         "\n\n\n"
 
     </string>
-    <string name="menu_delete">Delete Flow</string>
+    <string name="menu_delete">Төлөвлөгөө устгах</string>
     <string name="rate_app_title">Apps are pretty cool right?</string>
     <string name="rate_app_message">
         If you like this app you can rate it on the Google Play store!
@@ -291,14 +291,14 @@
     <string name="rate">OF COURSE (RATE)</string>
     <string name="no_rate">GO AWAY!</string>
     <string name="rate_cancel">LATER</string>
-    <string name="action_finished_edit">Finish editing Flow</string>
-    <string name="action_cancel_edit">Cancel editing Flow</string>
+    <string name="action_finished_edit">Төлөвлөгөө засаж дууслаа</string>
+    <string name="action_cancel_edit">Өөрчлөлтөө буцаах</string>
     <string name="fs_notification_title">Kickin\' it in Flow State</string>
-    <string name="fs_task_finish_msg">Finished!</string>
+    <string name="fs_task_finish_msg">Дууссан!</string>
     <string name="sandbox_delete_exception">Elements could not be deleted...\\nLooks like we messed up..</string>
     <string-array name="praise_msg">
-        <item> Nice work ! </item>
-        <item> Congrats ! </item>
+        <item> Сайн байлаа ! </item>
+        <item> Баяр хүргэе ! </item>
         <item> Sweet !</item>
     </string-array>
     <string-array name="quit_quotes">
@@ -309,35 +309,35 @@
         <item><i>"This is the real secret of life: \nbe completely engaged with what you are doing in the here and now. \n-Alan Watts"</i></item>
     </string-array>
     <string-array name="drawer_greeting">
-        <item name="monday"> Happy manic Monday! </item>
-        <item name="tuesday"> Happy tubular Tuesday! </item>
-        <item name="wednesday"> Happy wombo Wednesday! </item>
-        <item name="thursday"> Happy thankful Thursday !</item>
-        <item name="friday"> Happy funky Friday !</item>
-        <item name="saturday"> Happy super Saturday !</item>
-        <item name="sunday"> Happy slack Sunday! </item>
-        <item name="default"> Hey There! </item>
+        <item name="monday"> Даваа гаригийн мэнд! </item>
+        <item name="tuesday"> Мягмар гарагийн мэнд! </item>
+        <item name="wednesday"> Лхагва гарагийн мэнд! </item>
+        <item name="thursday"> Пүрэв гарагийн мэнд !</item>
+        <item name="friday"> Баасан гарагийн мэнд !</item>
+        <item name="saturday"> Бямба гарагийн мэнд !</item>
+        <item name="sunday"> Ням гарагийн мэнд! </item>
+        <item name="default"> Хэе сайн уу! </item>
     </string-array>
 
-    <string name="navigation_drawer_subtext">Let\'s get some stuff done.</string>
+    <string name="navigation_drawer_subtext">Төлөвлөгөөгөө сайн биелүүлэхийг хүсэе.</string>
     <string name="license_text">License</string>
-    <string name="support_devs">Support the developers</string>
+    <string name="support_devs">Хөгжүүлэгчидтэй холбогдох</string>
     <string name="res_attribution">Icons by: \nIcons8 and Google </string>
-    <string name="feature_not_ready">Oops.. \nThat feature\'s not ready yet!</string>s
-    <string name="drawer_about">About</string>
-    <string name="snackbar_sandbox_msg">Yeah... just delete your work away!</string>
+    <string name="feature_not_ready">Уучлаарай.. \nОдоохондоо боломжгүй байна!</string>s
+    <string name="drawer_about">Тухай</string>
+    <string name="snackbar_sandbox_msg">Тиймээ та бүх ажлаа устгачихлаа!</string>
     <string name="hint_zero">0</string>
     <string name="action_reorder_elements">Reorder elements</string>
-    <string name="action_flow_statistics">Statistics</string>
-    <string name="sb_sort_title">Sorting</string>
+    <string name="action_flow_statistics">Статистик</string>
+    <string name="sb_sort_title">Эрэмблэх</string>
     <string name="snackbar_hub_msg">To the data grave yard...</string>
-    <string name="fs_more_time_confirm">Time updated.</string>
+    <string name="fs_more_time_confirm">Цаг шинэчилсэн.</string>
     <string name="fs_dialog_more_time_title">How many more minutes?</string>
     <string name="frgmt_show_element_notes_hint">This is where you type magical text!</string>
-    <string name="finished_allcaps">FINISHED</string>
-    <string name="show_elements_editing">Editing</string>
-    <string name="minutes">minutes</string>
-    <string name="hours">hours</string>
+    <string name="finished_allcaps">Дууссан</string>
+    <string name="show_elements_editing">Засаж байна</string>
+    <string name="minutes">минут</string>
+    <string name="hours">цаг</string>
     <string name="designer_text_validation_msg">Mind checking that name and time again?</string>
     <string name="menu_send_feedback">Send Feedback</string>
     <string name="feedback_failed_msg">Sorry, can\'t send feedback at this time!</string>
@@ -353,10 +353,10 @@
 
 
     <string name="transition_explode">transition_explode</string>
-    <string name="notes_title">Notes:</string>
-    <string name="stats_total_elements">Total tasks:</string>
-    <string name="stats_estimated_time_title">Estimated time:</string>
-    <string name="stats_times_complete_title">Completions:</string>
+    <string name="notes_title">Тэмдэглэл:</string>
+    <string name="stats_total_elements">Нийт ажил:</string>
+    <string name="stats_estimated_time_title">Тооцоолсон цаг:</string>
+    <string name="stats_times_complete_title">Дуусгасан:</string>
     <string name="stats_life_time_in_flow">Lifetime in Flow:</string>
     <string name="drawer_secret_land">Secret Land</string>
     <string name="export_to_drive">Export data</string>
