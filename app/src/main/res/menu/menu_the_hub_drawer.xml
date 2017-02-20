@@ -3,14 +3,21 @@
     <item android:title="@string/drawer_about">
         <menu>
             <item
-                android:id="@+id/action_tou"
-                android:title="@string/license_text" />
-
+                android:id="@+id/nav_camera"
+                android:icon="@drawable/today_list"
+                android:title="Төлөвлөгөө" />
             <item
-                android:id="@+id/action_support_devs"
-                android:icon="@drawable/pressure_labs"
-                android:title="@string/support_devs" />
-
+                android:id="@+id/nav_gallery"
+                android:icon="@drawable/today_search"
+                android:title="Хайх" />
+            <item
+                android:id="@+id/nav_grap"
+                android:icon="@drawable/today_statistic"
+                android:title="Статистик" />
+            <item
+                android:id="@+id/nav_share"
+                android:icon="@drawable/today_settings"
+                android:title="Тохиргоо" />
         </menu>
     </item>
 
@@ -20,6 +27,22 @@
                 android:id="@+id/action_export_data"
                 android:title="@string/export_to_drive"
                 android:icon="@android:drawable/ic_menu_upload"/>
+            <item
+                android:id="@+id/nav_send"
+                android:icon="@drawable/today_like"
+                android:title="Үнэлгээ өгөх" />
+            <item
+                android:id="@+id/nav_manage"
+                android:icon="@drawable/today_aboutus"
+                android:title="Бидний тухай" />
+
+            <item
+                android:id="@+id/action_tou"
+                android:title="@string/license_text" />
+            <item
+                android:id="@+id/action_support_devs"
+                android:icon="@drawable/pressure_labs"
+                android:title="@string/support_devs" />
 
         </menu>
     </item>

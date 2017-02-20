@@ -193,10 +193,10 @@ public class TheHubActivity extends AppCompatActivity implements HubRecyclerView
         getMenuInflater().inflate(R.menu.menu_the_hub, menu);
 
         MenuItem newF = menu.findItem(R.id.action_new_flow);
-        MenuItem deleteAllF = menu.findItem(R.id.action_delete_flows);
+//        MenuItem deleteAllF = menu.findItem(R.id.action_delete_flows);
         if (menuState.equals(AppConstants.MENU_ITEMS_HIDE)) {
             newF.setVisible(false);
-            deleteAllF.setVisible(false);
+//            deleteAllF.setVisible(false);
         }
         return super.onCreateOptionsMenu(menu);
     }
@@ -210,10 +210,10 @@ public class TheHubActivity extends AppCompatActivity implements HubRecyclerView
         and passes a MenuItem object to indicate which item was clicked */
 
         switch (item.getItemId()) {
-
-            case R.id.action_delete_flows:
-                deleteFlowsDialog();
-                return true;
+//
+//            case R.id.action_delete_flows:
+//                deleteFlowsDialog();
+//                return true;
 
             case R.id.action_new_flow:
                 createNewFlow();
