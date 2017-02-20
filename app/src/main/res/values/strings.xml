@@ -359,5 +359,6 @@
     <string name="drawer_secret_land">Secret Land</string>
     <string name="export_to_drive">Export data</string>
     <string name="export_failed_msg">Sorry, can\'t export data at this time!</string>
+    <string name="title_activity_welcome">WelcomeActivity</string>
 
 </resources>
