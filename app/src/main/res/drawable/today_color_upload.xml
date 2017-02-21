@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="60dp"
+    android:height="60dp"
+    android:viewportWidth="60"
+    android:viewportHeight="60">
+
+    <path
+        android:fillColor="#7FABDA"
+        android:strokeColor="#7383BF"
+        android:strokeWidth="2"
+        android:strokeMiterLimit="10"
+        android:strokeLineCap="round"
+        android:pathData="M50.003,21.5
+c-0.115-8.699-7.193-16-15.919-16c-5.559,0-10.779,3.005-13.661,7.336C19.157,11.993,17.636,11.5,16,11.5c-4.418,0-8,3.582-8,8
+c0,0.153,0.014,0.302,0.023,0.454C8.013,20.136,8,20.32,8,20.5c-3.988,1.912-7,6.457-7,11.155C1,38.17,6.33,43.5,12.845,43.5h24.507
+c0.138,0,0.272-0.016,0.408-0.021c0.137,0.005,0.271,0.021,0.408,0.021h9.803C54.037,43.5,59,38.537,59,32.472
+C59,27.101,55.106,22.461,50.003,21.5z" />
+    <path
+        android:fillColor="#7FABDA"
+        android:strokeColor="#7383BF"
+        android:strokeWidth="2"
+        android:strokeMiterLimit="10"
+        android:strokeLineCap="round"
+        android:pathData="M50.003,21.5 c0,0-2.535-0.375-5.003,0" />
+    <path
+        android:fillColor="#7FABDA"
+        android:strokeColor="#7383BF"
+        android:strokeWidth="2"
+        android:strokeMiterLimit="10"
+        android:strokeLineCap="round"
+        android:pathData="M8,19.5 c0-4.418,3.582-8,8-8s8,3.582,8,8" />
+    <path
+        android:strokeColor="#424A60"
+        android:strokeWidth="2"
+        android:strokeMiterLimit="10"
+        android:strokeLineCap="round"
+        android:pathData="M 31.028 54.5 L 31.028 31.5" />
+    <path
+        android:strokeColor="#424A60"
+        android:strokeWidth="2"
+        android:strokeMiterLimit="10"
+        android:strokeLineCap="round"
+        android:pathData="M 31.028 31.5 L 39.028 39.5" />
+    <path
+        android:strokeColor="#424A60"
+        android:strokeWidth="2"
+        android:strokeMiterLimit="10"
+        android:strokeLineCap="round"
+        android:pathData="M 23.028 39.5 L 31.028 31.5" />
+</vector>

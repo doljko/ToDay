@@ -13,7 +13,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_margin="5dp"
-        card_view:cardCornerRadius="8dp"
+        card_view:cardCornerRadius="0dp"
         card_view:cardElevation="8dp"
         android:foreground="?android:attr/selectableItemBackground">
         <RelativeLayout
@@ -60,7 +60,7 @@
             <ImageView
                 android:contentDescription="@string/task_flag_description"
                 android:id="@+id/item_element_icon"
-                android:src="@drawable/today_done"
+                android:src="@drawable/today_color_success"
                 android:layout_width="20dp"
                 android:layout_height="20dp"
                 android:layout_marginEnd="125dp"
@@ -83,7 +83,7 @@
             <ImageView
                 android:contentDescription="@string/timer_description"
                 android:id="@+id/item_time_icon"
-                android:src="@drawable/today_clock"
+                android:src="@drawable/today_color_time"
                 android:layout_width="20dp"
                 android:layout_height="20dp"
                 android:layout_centerVertical="true"

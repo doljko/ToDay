@@ -49,7 +49,8 @@
         android:id="@+id/container_total_time"
         android:layout_toEndOf="@+id/container_total_elements"
         android:layout_alignTop="@+id/container_total_elements"
-        android:layout_marginLeft="@dimen/x3_activity_margin">
+        android:layout_marginLeft="@dimen/x3_activity_margin"
+        android:layout_toRightOf="@+id/container_total_elements">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -65,7 +66,8 @@
             android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/stats_total_time"/>
+            android:id="@+id/stats_total_time"
+            android:layout_toRightOf="@+id/stats_time_img" />
 
         <ImageView
             android:id="@+id/stats_time_img"
@@ -73,7 +75,7 @@
             android:layout_width="24dp"
             android:layout_height="24dp"
             android:scaleType="fitXY"
-            android:src="@drawable/today_time"
+            android:src="@drawable/today_color_time_1"
             />
     </RelativeLayout>
 
@@ -100,14 +102,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/stats_times_complete"
-           />
+            android:layout_toRightOf="@+id/stats_completes_img" />
         <ImageView
             android:id="@+id/stats_completes_img"
             android:layout_marginTop="@dimen/x1.5_times_activity_margin"
             android:layout_width="24dp"
             android:layout_height="24dp"
             android:scaleType="fitXY"
-            android:src="@drawable/star_amber_48dp"
+            android:src="@drawable/today_color_star"
             />
 
     </RelativeLayout>
@@ -120,7 +122,8 @@
         android:layout_toEndOf="@+id/container_times_complete"
         android:layout_alignTop="@+id/container_times_complete"
         android:layout_alignStart="@+id/container_total_time"
-        >
+        android:layout_toRightOf="@+id/container_times_complete"
+        android:layout_alignLeft="@+id/container_total_time">
         <TextView
             android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
             android:layout_width="wrap_content"
@@ -137,14 +140,15 @@
             android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/stats_life_time_spent_in_flow"/>
+            android:id="@+id/stats_life_time_spent_in_flow"
+            android:layout_toRightOf="@+id/stats_lifetime_img" />
         <ImageView
             android:id="@+id/stats_lifetime_img"
             android:layout_marginTop="@dimen/x1.5_times_activity_margin"
             android:layout_width="24dp"
             android:layout_height="24dp"
             android:scaleType="fitXY"
-            android:src="@drawable/android_green_48dp"
+            android:src="@drawable/today_color_time"
             />
     </RelativeLayout>
 
