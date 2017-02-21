@@ -50,7 +50,7 @@ public class FinishedFlowActivity extends AppCompatActivity {
         String randomStr = array[new Random().nextInt(array.length)];
 
         msg.setText(randomStr);
-        complete.setText(finishedFlow.getName() + " was finished in:");
+        complete.setText(finishedFlow.getName() + " дууслаа:");
         time.setText(timeComplete);
 
         appData.overwrite(finishedFlow.getUuid(), finishedFlow);

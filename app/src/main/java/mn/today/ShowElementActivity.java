@@ -164,6 +164,6 @@ public class ShowElementActivity extends AppCompatActivity implements ShowElemen
                 .replace(R.id.showelement_fragment_container, fragment)
                 .commit();
 
-        Toast.makeText(this, "Updated Element", Toast.LENGTH_LONG).show();
+        Toast.makeText(this, "Амжилттай шинэчиллээ", Toast.LENGTH_LONG).show();
     }
 }

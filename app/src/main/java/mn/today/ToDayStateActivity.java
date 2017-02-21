@@ -185,9 +185,9 @@ public class ToDayStateActivity extends AppCompatActivity
 
 
         new AlertDialog.Builder(this)
-                .setTitle("Your current Flow will be cancelled.")
+                .setTitle("Яг одоо хийж байгаа ажил хүчингүй болно.")
                 .setCancelable(false)
-                .setPositiveButton("Understood", new DialogInterface.OnClickListener() {
+                .setPositiveButton("Ойлголоо", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
                         fragment.notifyBackPressed();
                         flowStateFlag = AppConstants.EARLY_EXIT;
@@ -196,7 +196,7 @@ public class ToDayStateActivity extends AppCompatActivity
 
                     }
                 })
-                .setNegativeButton("No Don't!", null)
+                .setNegativeButton("Үгүй!", null)
                 .show();
 
 

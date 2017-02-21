@@ -44,7 +44,7 @@
     <string name="show_graphic">Статистик</string>
     <string name="show_about">Бидний тухай</string>
     <string name="show_contact">Холбоо барих</string>
-    <string name="show_view">Дэлгэрэгүй</string>
+    <string name="show_view">Дэлгэрэнгүй</string>
     <string name="updating_weather" tools:ignore="TypographyEllipsis">Цаг агаарын мэдээлэл шинэчилж байна...</string>
     <string name="location_permission_required">Цаг агаар шинэчилхэд таны байршил хэрэгтэй</string>
     <string name="week_start">7 хоногийн эхлэл</string>
@@ -58,7 +58,7 @@
     <string name="calendars">Календарууд</string>
     <string name="error_location">Таны байршилыг тогтоох боломжгүй байна</string>
     <string name="title_activity_view">ViewActivity</string>
-    <string name="activity_the_hub">The Hub</string>
+    <string name="activity_the_hub">ToDay</string>
     <string name="action_settings">Тохиргоо</string>
     <string name="new_task_name">Ажлын нэр</string>
     <string-array name="select_time">
@@ -72,7 +72,7 @@
     <string name="empty_list">Хоосон байна&#8230;</string>
     <string name="action_delete_flow">Төлөвлөгөө устгах</string>
     <string name="describe_element_count">Төлөвлөгөөнүүд</string>
-    <string name="title_activity_flow_state">FlowStateActivity</string>
+    <string name="title_activity_flow_state">ToDay</string>
     <string name="next_element">Дараа</string>
     <string name="more_time">Илүү хугацаа!</string>
     <string name="task_flag_description">An image of a blank flag outline</string>
@@ -104,29 +104,29 @@ SOFTWARE."
 
     </string>
     <string name="menu_delete">Төлөвлөгөө устгах</string>
-    <string name="rate_app_title">M?</string>
+    <string name="rate_app_title">Таньд манай апп таалагдсан уу?</string>
     <string name="rate_app_message">
-        If you like this app you can rate it on the Google Play store!
-        But you knew that already didn\'t you? </string>
-    <string name="rate">OF COURSE (RATE)</string>
-    <string name="no_rate">GO AWAY!</string>
-    <string name="rate_cancel">LATER</string>
+        Таньд манай апп таалагдсан бол Google Play store дээр үнэлгээ өгнө үү! </string>
+    <string name="rate">МЭДЭЭЖ</string>
+    <string name="no_rate">ҮГҮЙ!</string>
+    <string name="rate_cancel">ДАРАА</string>
     <string name="action_finished_edit">Төлөвлөгөө засаж дууслаа</string>
     <string name="action_cancel_edit">Өөрчлөлтөө буцаах</string>
-    <string name="fs_notification_title">Kickin\' it in Flow State</string>
+    <string name="fs_notification_title">Өнөөдрийн төлөвлөгөө</string>
     <string name="fs_task_finish_msg">Дууссан!</string>
     <string name="sandbox_delete_exception">Elements could not be deleted...\\nLooks like we messed up..</string>
     <string-array name="praise_msg">
         <item> Сайн байлаа ! </item>
         <item> Баяр хүргэе ! </item>
-        <item> Sweet !</item>
+        <item> Муугүй !</item>
     </string-array>
     <string-array name="quit_quotes">
-        <item><i>"Sit, walk, or run, but don't wobble." \n- Zen Proverb</i> </item>
-        <item><i>"For there is never anything but the present, and if one cannot live there, one cannot live anywhere. \n-Alan Watts" </i></item>
-        <item><i>"Sitting quietly, doing nothing,\n Spring comes, and the grass grows by itself." \n- Zen Proverb </i> </item>
-        <item><i>"All of the significant battles are waged within the self." \n-Sheldon Kopp </i> </item>
-        <item><i>"This is the real secret of life: \nbe completely engaged with what you are doing in the here and now. \n-Alan Watts"</i></item>
+        <item><i>"Амжилтанд хүрэхээр шийдсэн таны шийдвэр бүхнээс чухал гэдгийг сана." \n- Abraham Lincoln</i> </item>
+        <item><i>"Та юуг ч хийж чадна, гэхдээ бүгдийг хийж чадахгүй. \n-Дэвид Аллен" </i></item>
+        <item><i>"Хэрвээ та үзээд алдахгүй бол 100% алдаж буудлаа гэсэн үг." \n- Уэйн Грэтзки </i> </item>
+        <item><i>"Нэг өнөөдөр хоёр маргааштай тэнцэнэ.</i> </item>
+        <item><i>"Бид өөрсдийн давтан хийж байдаг үйлийн үрүүд юм, тиймээс амжилттай байдал гэдэг бол үйлдэл биш харин зуршил байх ёстой." \n-Aristotle </i> </item>
+        <item><i>"Чи амжилтыг хүсэж болно. Гэхдээ түүнд хүрэхийн тулд бүдэрч болохгүй, хальтарч болохгүй. Унтаж болохгүй. Тийм ээ, нэг нүдээ чи үүрд нээлттэй байлгах болно"</i></item>
     </string-array>
     <string-array name="drawer_greeting">
         <item name="monday"> Даваа гаригийн мэнд! </item>
@@ -140,32 +140,32 @@ SOFTWARE."
     </string-array>
 
     <string name="navigation_drawer_subtext">Төлөвлөгөөгөө сайн биелүүлэхийг хүсэе.</string>
-    <string name="license_text">License</string>
+    <string name="license_text">Лиценз</string>
     <string name="support_devs">Хөгжүүлэгчидтэй холбогдох</string>
     <string name="feature_not_ready">Уучлаарай.. \nОдоохондоо боломжгүй байна!</string>s
     <string name="drawer_about">Тухай</string>
     <string name="snackbar_sandbox_msg">Тиймээ та бүх ажлаа устгачихлаа!</string>
     <string name="hint_zero">0</string>
-    <string name="action_reorder_elements">Reorder elements</string>
+    <string name="action_reorder_elements">Дахин биелүүлэх</string>
     <string name="action_flow_statistics">Статистик</string>
     <string name="sb_sort_title">Эрэмблэх</string>
-    <string name="snackbar_hub_msg">To the data grave yard...</string>
+    <string name="snackbar_hub_msg">...</string>
     <string name="fs_more_time_confirm">Цаг шинэчилсэн.</string>
-    <string name="fs_dialog_more_time_title">How many more minutes?</string>
+    <string name="fs_dialog_more_time_title">Дахиад хэдэн минут?</string>
     <string name="frgmt_show_element_notes_hint">This is where you type magical text!</string>
     <string name="finished_allcaps">Дууссан</string>
     <string name="show_elements_editing">Засаж байна</string>
     <string name="minutes">минут</string>
     <string name="hours">цаг</string>
-    <string name="designer_text_validation_msg">Mind checking that name and time again?</string>
-    <string name="menu_send_feedback">Send Feedback</string>
-    <string name="feedback_failed_msg">Sorry, can\'t send feedback at this time!</string>
-    <string name="feedback_subject_msg">Flow: Some ideas for you!</string>
-    <string name="email_pressurelabs">rob@pressurelabs.com</string>
+    <string name="designer_text_validation_msg">Нэр болон хугацаагаа оруулна уу?</string>
+    <string name="menu_send_feedback">Санал хүсэлтээ илгээх</string>
+    <string name="feedback_failed_msg">Уучлаарай санал хүсэлт илгээх боломжгүй байна!</string>
+    <string name="feedback_subject_msg">ToDay: Таны төлөвлөгөө!</string>
+    <string name="email_pressurelabs">toroo.byamba@gmail.com</string>
     <string name="feedback_body_msg">
-        "Hey Rob,"
+        "Сайн уу,"
 
-        "\n\nHere are some ideas/feedback I have for Flow:"
+        "\n\nЭнд ToDay апп-тай холбоотой саналаа оруулна уу:"
         "\n\n\n\n\n\n\n\n\n\n"
         "Cheers mate!"
     </string>
@@ -178,12 +178,12 @@ SOFTWARE."
     <string name="stats_times_complete_title">Дуусгасан:</string>
     <string name="stats_life_time_in_flow">Төвлөрсөн хугацаа:</string>
     <string name="drawer_secret_land"></string>
-    <string name="export_to_drive">Export data</string>
-    <string name="export_failed_msg">Sorry, can\'t export data at this time!</string>
-    <string name="title_activity_welcome">WelcomeActivity</string>
+    <string name="export_to_drive">Мэдээлэл экспортлох</string>
+    <string name="export_failed_msg">Уучлаарай мэдээлэл экспорт хийх боломжгүй байна!</string>
+    <string name="title_activity_welcome">ToDay</string>
 
 
-    <string name="start">GOT IT</string>
+    <string name="start">ЭХЛЭХ</string>
 
     <string name="slide_1_title">Төлөвлөгөөгөө гарга!</string>
     <string name="slide_1_desc">Та хийх ажлынхаа төлөвлөгөөг гаргах боломжтой!</string>

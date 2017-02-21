@@ -309,7 +309,7 @@ public class SandBoxActivity extends AppCompatActivity
     public void goFlowState(View v) {
         if (currentToDay.getChildElements().isEmpty()) {
             this.showToast(
-                    "Look's like there is no elements yet!"
+                    "Одоогоор ямарч төлөвлөгөө харуулах боломжгүй байна!"
             );
         } else {
             Intent in = new Intent(this, ToDayStateActivity.class);
@@ -356,7 +356,7 @@ public class SandBoxActivity extends AppCompatActivity
 
 
         Snackbar bar = Snackbar.make(elementGridView, R.string.snackbar_sandbox_msg, Snackbar.LENGTH_SHORT)
-                .setAction("UNDO", new View.OnClickListener() {
+                .setAction("БУЦАХ", new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
                         currentToDay.setChildElements(reference);

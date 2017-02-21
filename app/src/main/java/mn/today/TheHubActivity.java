@@ -319,13 +319,13 @@ public class TheHubActivity extends AppCompatActivity implements HubRecyclerView
         final EditText nameInputET = new EditText(TheHubActivity.this);
         AlertDialog.Builder customDialog = generateCustomDialog(nameInputET);
 
-        customDialog.setPositiveButton("Lets Roll",
+        customDialog.setPositiveButton("Нэмэх",
                 new DialogInterface.OnClickListener() {
 
                     public void onClick(DialogInterface dialog, int whichButton) {
                         if (nameInputET.getText().toString().equals("")) {
                             // Need to optimize this so that the dialog does NOT disappear and just display toast
-                            Toast.makeText(TheHubActivity.this, "Every Flow deserves a good name :(", Toast.LENGTH_LONG).show();
+                            Toast.makeText(TheHubActivity.this, "Төлөвлөгөө бүр ямар нэг нэртэй байна :(", Toast.LENGTH_LONG).show();
 
                             createNewFlow(); //Recall the dialog
                         } else {
@@ -345,7 +345,7 @@ public class TheHubActivity extends AppCompatActivity implements HubRecyclerView
                     }
                 });
 
-        customDialog.setNegativeButton("Nevermind",
+        customDialog.setNegativeButton("Буцах",
                 new DialogInterface.OnClickListener() {
 
                     public void onClick(DialogInterface dialog, int whichButton) {
@@ -378,7 +378,7 @@ public class TheHubActivity extends AppCompatActivity implements HubRecyclerView
         //Adds the ET and params to the layout of the dialog box
         layout.addView(nameInputET, params);
 
-        newFlowDialog.setTitle("Name your new Flow.");
+        newFlowDialog.setTitle("Төлөвлөгөөний нэр.");
 
         newFlowDialog.setView(layout);
 
@@ -392,7 +392,7 @@ public class TheHubActivity extends AppCompatActivity implements HubRecyclerView
      */
     private void deleteFlowsDialog() {
         new AlertDialog.Builder(this)
-                .setTitle("ALL Flows will be deleted.")
+                .setTitle("Бүх төлөвлөгөөгөө устгалаа.")
                 .setMessage("This action is PERMANENT")
                 .setCancelable(false)
                 .setPositiveButton("Understood", new DialogInterface.OnClickListener() {
@@ -497,7 +497,7 @@ public class TheHubActivity extends AppCompatActivity implements HubRecyclerView
                 popup.dismiss();
 
                 Snackbar bar = Snackbar.make(cardViewClicked, R.string.snackbar_hub_msg, Snackbar.LENGTH_LONG)
-                        .setAction("NO!!!", new View.OnClickListener() {
+                        .setAction("ҮГҮЙ!!!", new View.OnClickListener() {
                             @Override
                             public void onClick(View v) {
                                 rvContent.add(cardPosition, longClickedFlow);
@@ -604,7 +604,7 @@ public class TheHubActivity extends AppCompatActivity implements HubRecyclerView
                 ToDay toChange = rvContent.get(cardPosition);
                 if (newName.getText().toString().equals("")) {
                     // Need to optimize this so that the dialog does NOT disappear and just display toast
-                    Toast.makeText(TheHubActivity.this, "This Flow needs a name!", Toast.LENGTH_LONG).show();
+                    Toast.makeText(TheHubActivity.this, "Нэр оруулна уу!", Toast.LENGTH_LONG).show();
                 } else {
                     toChange.setName(newName.getText().toString());
                     manager.overwrite(toChange.getUuid(), toChange);

@@ -61,7 +61,7 @@ public class SandBoxGridAdapter extends BaseDynamicGridAdapter {
 
         void build() {
             imageView.setScaleType(ImageView.ScaleType.CENTER);
-            imageView.setImageResource(R.drawable.flag_black_48dp);
+            imageView.setImageResource(R.drawable.today_color_idea);
             imageView.setPadding(2,2,2,2);
         }
 
