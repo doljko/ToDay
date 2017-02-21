@@ -60,7 +60,7 @@
             <ImageView
                 android:contentDescription="@string/task_flag_description"
                 android:id="@+id/item_element_icon"
-                android:src="@drawable/flag_small_black_outline"
+                android:src="@drawable/today_done"
                 android:layout_width="20dp"
                 android:layout_height="20dp"
                 android:layout_marginEnd="125dp"
@@ -83,7 +83,7 @@
             <ImageView
                 android:contentDescription="@string/timer_description"
                 android:id="@+id/item_time_icon"
-                android:src="@drawable/timer_black_48dp"
+                android:src="@drawable/today_clock"
                 android:layout_width="20dp"
                 android:layout_height="20dp"
                 android:layout_centerVertical="true"

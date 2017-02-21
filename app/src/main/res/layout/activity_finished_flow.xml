@@ -96,7 +96,7 @@
             android:id="@+id/ff_button_complete_run"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/done_white_48dp"
+            android:src="@drawable/today_success"
             android:onClick="completeRun"
             android:layout_marginLeft="@dimen/activity_vertical_margin"
             android:layout_marginBottom="@dimen/activity_vertical_margin"

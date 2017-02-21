@@ -16,7 +16,7 @@
         android:layout_width="36dp"
         android:layout_height="36dp"
         android:scaleType="fitXY"
-        android:src="@drawable/edit_blue_circle_48dp"
+        android:src="@drawable/today_edit"
         android:id="@+id/popup_edit_item"
         />
 
@@ -28,7 +28,7 @@
         android:layout_width="36dp"
         android:layout_height="36dp"
         android:scaleType="fitXY"
-        android:src="@drawable/disposal_red_48dp"
+        android:src="@drawable/today_delete"
         android:id="@+id/popup_delete_item"/>
 
 

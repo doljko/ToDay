@@ -71,7 +71,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/designer_task_element"
         android:layout_gravity="center_horizontal|bottom"
-        android:src="@drawable/empty_task_large"
+        android:src="@drawable/today_done"
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true" />
 

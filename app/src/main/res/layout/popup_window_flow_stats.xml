@@ -29,14 +29,15 @@
             android:textAppearance="@style/TextAppearance.AppCompat.Body2"
             android:id="@+id/stats_total_elements"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/stats_elements_img" />
         <ImageView
             android:id="@+id/stats_elements_img"
             android:layout_marginTop="@dimen/x1.5_times_activity_margin"
             android:layout_width="24dp"
             android:layout_height="24dp"
             android:scaleType="fitXY"
-            android:src="@drawable/flag_black_48dp"
+            android:src="@drawable/today_success"
             />
 
     </RelativeLayout>
@@ -72,7 +73,7 @@
             android:layout_width="24dp"
             android:layout_height="24dp"
             android:scaleType="fitXY"
-            android:src="@drawable/time_blue_48dp"
+            android:src="@drawable/today_time"
             />
     </RelativeLayout>
 
