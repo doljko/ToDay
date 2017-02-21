@@ -15,7 +15,7 @@ import mn.today.CalendarUtils;
 /**
  * Created by Tortuvshin Byambaa on 1/31/2017.
  */
-
+@Deprecated
 public abstract class EventsQueryHandler extends AsyncQueryHandler {
 
     private static final String SORT = CalendarContract.Events.DTSTART + " ASC";

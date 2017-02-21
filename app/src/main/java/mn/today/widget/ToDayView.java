@@ -23,7 +23,7 @@ import mn.today.weather.Weather;
 /**
  * Created by Tortuvshin Byambaa on 1/31/2017.
  */
-
+@Deprecated
 public class ToDayView extends RecyclerView {
     private static final String STATE_VIEW = "state:view";
     private static final String STATE_ADAPTER = "state:adapter";

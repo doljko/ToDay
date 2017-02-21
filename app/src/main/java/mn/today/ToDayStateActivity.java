@@ -117,10 +117,10 @@ public class ToDayStateActivity extends AppCompatActivity
                 .setStepsViewIndicatorUnCompletedLineColor(ContextCompat.getColor(this, R.color.black))
                 .setStepViewComplectedTextColor(ContextCompat.getColor(this, android.R.color.black))
                 .setStepViewUnComplectedTextColor(ContextCompat.getColor(this, R.color.black))
-                .setStepsViewIndicatorCompleteIcon(ContextCompat.getDrawable(this, R.drawable.flag_black_48dp))
+                .setStepsViewIndicatorCompleteIcon(ContextCompat.getDrawable(this, R.drawable.today_success))
                 .setStepsViewIndicatorDefaultIcon(ContextCompat.getDrawable(this, R.drawable.default_icon))
                 // Consider changing to blank drawable?
-                .setStepsViewIndicatorAttentionIcon(ContextCompat.getDrawable(this, R.drawable.attention));
+                .setStepsViewIndicatorAttentionIcon(ContextCompat.getDrawable(this, R.drawable.today_color_info));
 
         stepProgress.ondrawIndicator();
     }
@@ -437,7 +437,7 @@ public class ToDayStateActivity extends AppCompatActivity
 
         NotificationCompat.Builder builder =
                 new NotificationCompat.Builder(this)
-                        .setSmallIcon(R.drawable.flow_state_notify)
+                        .setSmallIcon(R.drawable.today_color_success)
                         .setColor(getResources().getColor(R.color.colorPrimary))
                         .setContentIntent(intent)
                         .setContentTitle(getString(R.string.fs_notification_title))

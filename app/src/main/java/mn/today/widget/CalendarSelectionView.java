@@ -22,7 +22,7 @@ import mn.today.content.CalendarCursor;
 /**
  * Created by Tortuvshin Byambaa on 1/31/2017.
  */
-
+@Deprecated
 public class CalendarSelectionView extends ListView {
     private final SimpleCursorAdapter mCursorAdapter;
     private OnSelectionChangeListener mListener;

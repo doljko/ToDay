@@ -12,9 +12,9 @@
         android:layout_gravity="center"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_margin="5dp"
+        android:layout_margin="2dp"
         card_view:cardCornerRadius="0dp"
-        card_view:cardElevation="8dp"
+        card_view:cardElevation="2dp"
         android:foreground="?android:attr/selectableItemBackground">
         <RelativeLayout
             android:layout_width="match_parent"

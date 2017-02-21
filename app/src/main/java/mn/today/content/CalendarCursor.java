@@ -11,6 +11,7 @@ import android.provider.CalendarContract;
 /**
  * {@link android.provider.CalendarContract.Calendars} cursor wrapper
  */
+@Deprecated
 public class CalendarCursor extends CursorWrapper {
 
     /**

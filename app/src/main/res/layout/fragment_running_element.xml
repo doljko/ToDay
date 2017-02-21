@@ -71,7 +71,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/designer_task_element"
         android:layout_gravity="center_horizontal|bottom"
-        android:src="@drawable/today_color_done"
+        android:src="@drawable/today_color_idea"
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true" />
 

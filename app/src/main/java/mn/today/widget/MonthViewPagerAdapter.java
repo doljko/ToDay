@@ -20,7 +20,7 @@ import mn.today.content.EventCursor;
 /**
  * Created by Tortuvshin Byambaa on 1/31/2017.
  */
-
+@Deprecated
 class MonthViewPagerAdapter extends PagerAdapter {
     private static final String STATE_FIRST_MONTH_MILLIS = "state:month";
     private static final String STATE_SELECTED_DAY_MILLIS = "state:selectedDay";

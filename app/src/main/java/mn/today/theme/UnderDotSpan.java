@@ -13,6 +13,7 @@ import mn.today.R;
 /**
  * Created by Tortuvshin Byambaa on 1/31/2017.
  */
+@Deprecated
 public class UnderDotSpan extends ReplacementSpan {
 
     private final float mSize;

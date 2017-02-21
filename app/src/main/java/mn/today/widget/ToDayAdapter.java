@@ -34,7 +34,7 @@ import mn.today.content.EventCursor;
 /**
  * Created by Tortuvshin Byambaa on 1/31/2017.
  */
-
+@Deprecated
 public abstract class ToDayAdapter extends RecyclerView.Adapter<ToDayAdapter.RowViewHolder> {
     private static final String STATE_EVENT_GROUPS = "state:eventGroups";
     private static final int VIEW_TYPE_HEADER = 0;

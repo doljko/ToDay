@@ -11,7 +11,7 @@ import java.util.TimeZone;
 /**
  * Created by Tortuvshin Byambaa on 1/31/2017.
  */
-
+@Deprecated
 public class CalendarUtils {
 
     /**

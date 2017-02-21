@@ -7,6 +7,7 @@ import android.support.v4.content.ContextCompat;
 /**
  * Utility class for view logic
  */
+@Deprecated
 public class ViewUtils {
 
     /**

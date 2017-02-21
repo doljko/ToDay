@@ -7,7 +7,7 @@ import android.provider.CalendarContract;
 /**
  * Created by Tortuvshin Byambaa on 1/31/2017.
  */
-
+@Deprecated
 public class EventCursor extends CursorWrapper {
 
     /**

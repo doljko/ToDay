@@ -16,7 +16,7 @@ import mn.today.R;
 /**
  * Created by Tortuvshin Byambaa on 1/31/2017.
  */
-
+@Deprecated
 public class Weather {
 
     private static final int SPEC_SIZE = 6;

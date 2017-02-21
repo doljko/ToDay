@@ -13,7 +13,7 @@ import mn.today.R;
 /**
  * Created by Tortuvshin Byambaa on 1/31/2017.
  */
-
+@Deprecated
 public class CircleSpan extends ReplacementSpan {
 
     private final float mPadding;

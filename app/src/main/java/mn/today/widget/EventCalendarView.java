@@ -14,7 +14,7 @@ import mn.today.content.EventCursor;
 /**
  * Created by Tortuvshin Byambaa on 1/31/2017.
  */
-
+@Deprecated
 public class EventCalendarView extends ViewPager {
 
     private final MonthView.OnDateChangeListener mDateChangeListener =

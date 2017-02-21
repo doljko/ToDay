@@ -32,7 +32,7 @@ import java.lang.ref.WeakReference;
 import mn.today.content.CalendarCursor;
 import mn.today.widget.EventEditView;
 
-
+@Deprecated
 public class EditActivity extends AppCompatActivity implements LoaderManager.LoaderCallbacks<Cursor> {
 
     /**

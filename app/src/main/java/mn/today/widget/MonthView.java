@@ -31,7 +31,7 @@ import mn.today.theme.UnderDotSpan;
 /**
  * Created by Tortuvshin Byambaa on 1/31/2017.
  */
-
+@Deprecated
 class MonthView extends RecyclerView {
     private static final int SPANS_COUNT = 7; // days in week
     @VisibleForTesting

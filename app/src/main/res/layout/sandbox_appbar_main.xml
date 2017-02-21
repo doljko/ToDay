@@ -35,6 +35,7 @@
         android:layout_gravity="bottom|end"
         android:layout_margin="@dimen/fab_margin"
         android:src="@drawable/today_color_addn"
+        android:background="@color/white"
         android:onClick="createElement"/>
 
     <android.support.design.widget.FloatingActionButton
