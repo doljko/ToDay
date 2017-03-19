@@ -201,5 +201,6 @@ SOFTWARE."
     <string name="play_again">Play Again</string>
     <string name="title_item_list">Items</string>
     <string name="title_item_detail">Item Detail</string>
+    <string name="title_activity_main2">Main2Activity</string>
 
 </resources>

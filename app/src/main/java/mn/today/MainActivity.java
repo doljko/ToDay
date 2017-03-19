@@ -48,7 +48,7 @@ import mn.today.widget.CalendarSelectionView;
 import mn.today.widget.EventCalendarView;
 import mn.today.widget.ToDayAdapter;
 import mn.today.widget.ToDayView;
-
+@Deprecated
 public class MainActivity extends AppCompatActivity implements LoaderManager.LoaderCallbacks<Cursor> {
 
     private static final String STATE_TOOLBAR_TOGGLE = "state:toolbarToggle";
