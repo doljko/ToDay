@@ -4,6 +4,11 @@
 
 ToDay optimizes daily scheduling and planning
 
+### Download It
+<a href="https://play.google.com/store/apps/details">
+  <img alt="Android app on Google Play" src="https://developer.android.com/images/brand/en_app_rgb_wo_45.png" />
+</a>
+
 ### License
 [![GitHub license](https://img.shields.io/badge/license-AGPL-blue.svg)](https://raw.githubusercontent.com/today-app/android/master/LICENSE)
 
