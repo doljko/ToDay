@@ -46,6 +46,7 @@
         android:id="@+id/designer_name_input"
         android:maxLines="1"
         android:maxLength="25"
+        android:textColor="@color/black"
         android:focusableInTouchMode="true"
         android:layout_alignParentLeft="false"
         android:layout_alignParentTop="false"

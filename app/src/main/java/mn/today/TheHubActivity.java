@@ -56,7 +56,6 @@ import java.util.Calendar;
  * Created by Tortuvshin Byambaa on 2/15/2017.
  */
 
-
 public class TheHubActivity extends AppCompatActivity implements HubRecyclerViewAdapter.onCardClickListener, NavigationView.OnNavigationItemSelectedListener, GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener {
 
     /* Data Management and Export */
