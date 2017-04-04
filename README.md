@@ -19,6 +19,10 @@ ToDay optimizes daily scheduling and planning
 <img src="https://github.com/today-app/android/blob/master/app/Screenshot_20170404-100437.png" align="left" width="150px"/>
 <img src="https://github.com/today-app/android/blob/master/app/Screenshot_20170404-100443.png" width="150px"/>
 
+### Demo video
+
+[![Today app](http://img.youtube.com/vi/CDXJpeQPUo4/0.jpg)](https://youtu.be/CDXJpeQPUo4 "Today app")
+
 ### License
 [![GitHub license](https://img.shields.io/badge/license-AGPL-blue.svg)](https://raw.githubusercontent.com/today-app/android/master/LICENSE)
 
