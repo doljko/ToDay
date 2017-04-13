@@ -29,3 +29,7 @@ ToDay optimizes daily scheduling and planning
 ### Authors
 * [@doljko](http://github.com/doljko)
 * [@tortuvshin](http://github.com/tortuvshin)
+
+### Inspiration: Flow 
+* [@robertsimoes](http://github.com/robertsimoes) 
+https://github.com/robertsimoes/Flow
