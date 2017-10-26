@@ -11,13 +11,13 @@ ToDay optimizes daily scheduling and planning
 
 ### Screens
 
-<img src="https://github.com/today-app/android/blob/master/app/Screenshot_20170404-095940.png" align="left" width="150px"/>
-<img src="https://github.com/today-app/android/blob/master/app/Screenshot_20170404-095945.png" align="left" width="150px"/>
-<img src="https://github.com/today-app/android/blob/master/app/Screenshot_20170404-095948.png" align="left" width="150px"/>
-<img src="https://github.com/today-app/android/blob/master/app/Screenshot_20170404-095957.png" align="left" width="150px"/>
-<img src="https://github.com/today-app/android/blob/master/app/Screenshot_20170404-100358.png" align="left" width="150px"/>
-<img src="https://github.com/today-app/android/blob/master/app/Screenshot_20170404-100437.png" align="left" width="150px"/>
-<img src="https://github.com/today-app/android/blob/master/app/Screenshot_20170404-100443.png" width="150px"/>
+<img src="https://github.com/tortuvshin/yield/blob/master/app/Screenshot_20170404-095940.png" align="left" width="150px"/>
+<img src="https://github.com/tortuvshin/yield/blob/master/app/Screenshot_20170404-095945.png" align="left" width="150px"/>
+<img src="https://github.com/tortuvshin/yield/blob/master/app/Screenshot_20170404-095948.png" align="left" width="150px"/>
+<img src="https://github.com/tortuvshin/yield/blob/master/app/Screenshot_20170404-095957.png" align="left" width="150px"/>
+<img src="https://github.com/tortuvshin/yield/blob/master/app/Screenshot_20170404-100358.png" align="left" width="150px"/>
+<img src="https://github.com/tortuvshin/yield/blob/master/app/Screenshot_20170404-100437.png" align="left" width="150px"/>
+<img src="https://github.com/tortuvshin/yield/blob/master/app/Screenshot_20170404-100443.png" width="150px"/>
 
 ### Demo video
 
