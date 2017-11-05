@@ -1,6 +1,6 @@
-[![GitHub issues](https://img.shields.io/github/issues/today-app/android.svg)](https://github.com/today-app/android/issues)
-[![GitHub forks](https://img.shields.io/github/forks/today-app/android.svg)](https://github.com/today-app/android/network)
-[![GitHub stars](https://img.shields.io/github/stars/today-app/android.svg)](https://github.com/today-app/android/stargazers)
+[![GitHub issues](https://img.shields.io/github/issues/tortuvshin/yield.svg)](https://github.com/tortuvshin/yield/issues)
+[![GitHub forks](https://img.shields.io/github/forks/tortuvshin/yield.svg)](https://github.com/tortuvshin/yield/network)
+[![GitHub stars](https://img.shields.io/github/stars/tortuvshin/yield.svg)](https://github.com/tortuvshin/yield/stargazers)
 
 ToDay optimizes daily scheduling and planning
 
