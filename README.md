@@ -6,7 +6,7 @@
      <a href="https://github.com/tortuvshin/yield/fork">
         <img src="https://img.shields.io/github/forks/tortuvshin/yield.svg?style=social&label=Fork"
             alt="Forks"></a>
-    <a href="https://github.com/tortuvshin/yield/stargers">
+    <a href="https://github.com/tortuvshin/yield/stargazers">
         <img src="https://img.shields.io/github/stars/tortuvshin/yield.svg?style=social&label=Stars"
             alt="Stars"></a>
     <a href="https://github.com/tortuvshin/">
